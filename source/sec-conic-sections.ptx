@@ -28,7 +28,7 @@
         (and we note that <m>\arctan(\alpha)</m> is the slope of the cone), 
         one can check that all these conic sections can be described as points 
         <m>(x,y)</m> in the plane that satisfy some quadratic equation 
-        <me>a x^2+b xy+c y^2+d x+e y+f=0</me> for some appropriate constants 
+        <me>a x^2+b xy+c y^2+d x+e y+f=0</me> with some appropriate constants 
         <m>a, b, c, d, e, f</m>; in fact, by choosing the coordinate system 
         appropriately (i.e., by rotating and translating the curves here 
         appropriately, i.e., by looking at a <em>congruent copy</em> of the curve), 
@@ -38,8 +38,8 @@
         or the whole plane.</fn> have to consider the three equations 
         <me>\alpha x^2+\beta y^2=1</me> which describes an ellipse, 
         <me>\alpha x^2-\beta y^2=1</me> which describes a hyperbola, 
-        and <me>\alpha x^2=y</me> which describes a parabola, for some 
-        positive constants <m>\alpha</m> and <m>\beta</m>. While this 
+        and <me>\alpha x^2=y</me> which describes a parabola, where 
+        <m>\alpha</m> and <m>\beta</m> are positive constants. While this 
         classification with respect to quadratic equations is useful, 
         there are other <mdash /> geometrical <mdash /> ways to describe 
         these curves.

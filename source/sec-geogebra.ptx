@@ -4,14 +4,22 @@
   <title>GeoGebra</title>
 
     <p> 
-	    You find the conic sections in the following tool menu in GeoGebra (the seventh from the left):
+	    You find the conic sections (after possibly scrolling down and selecting "MORE") 
+		in its own section on <a href="https://www.geogebra.org/calculator">GeoGebra</a>:
+	</p>
+
+	<image valign="middle" source="GeoGebra-Online.png"/>	
+		
+	<p>	
+		If you downloaded GeoGebra and use it locally on your computer, you find the 
+		conic sections in the following tool menu in GeoGebra (the seventh from the left):
     </p>
 				
 	<image width="10%" valign="middle" source="GGconicsections.png"/>
 
 	<p>
 		There are four conic section tools under this menu: One for each of the conic sections 
-        <em>ellips</em>, <em>parabola</em> and <em>hyperbola</em>, and a general tool called 
+        <em>ellipse</em>, <em>parabola</em> and <em>hyperbola</em>, and a general tool called 
         <em>conic through 5 points</em>. The last one is the actual icon for GeoGebra!
 	</p>
 
@@ -19,7 +27,17 @@
 
 	<p>
 	    <em>Circles</em> are special case of conic sections. The tools dealing with circles 
-        can be found in the tool menu to the left of conic sections.
+        can be found in the tool menu to the left/above of conic sections.
 	</p>
+
+	<p>
+		It is probably the easiest to create a GeoGebra file for each of the three conic 
+		sections <mdash /> although you can also do it in one file and then use 
+		<em>check boxes</em> or <em>buttons</em> (like we learnt in the course) to show 
+		one construction while hiding the others. Even if you create separate GeoGebra 
+		files for each conic section, you should use <em>check boxes</em>, 
+		<em>buttons</em>, etc. to show/hide the different tasks and constructions for each 
+		of them.
+	</p> 
 
 </section>
