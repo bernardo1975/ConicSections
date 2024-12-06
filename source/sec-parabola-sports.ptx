@@ -184,9 +184,9 @@
         optimal angle. Measured values for different sports can be found in the following table:
 	</p>  
 
-	<table xml:id="table-sports">
+	<table xml:id="table-sports" halign="center">
         <caption halign="center">Measured parameters for different sports</caption>
-        <tabular top="minor" halign="center">
+        <tabular top="minor">
             <row bottom="major">
                 <cell>Sport</cell>
                 <cell><m>\alpha</m> (in <m>\mbox{}^{\circ}</m>) </cell>
