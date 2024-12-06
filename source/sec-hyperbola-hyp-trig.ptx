@@ -30,7 +30,15 @@
       <li> the <term>hyperbolic sine</term> denoted <code>sinh(x)</code>, and</li>
       <li> the <term>hyperbolic tangent</term> denoted <code>tanh(x)</code>.</li>
     </ul>
-    Plot them in <em>SageMath</em>.
+    Let us plot them in <em>SageMath</em>.
+    <sage>
+      <input>
+      coshgraph = plot(cosh(x),(x,-3,3),color="purple",thickness=2,aspect_ratio=1,legend_label="cosh")
+      sinhgraph = plot(sinh(x),(x,-3,3),color="darkgreen",thickness=2, linestyle=":",legend_label="sinh")
+      tanhgraph = plot(tanh(x),(x,-3,3),color="red",thickness=2, linestyle="-.",detect_poles=True,ymax=3,ymin=-3,aspect_ratio=1,legend_label="tanh")
+      coshgraph+sinhgraph+tanhgraph
+      </input>
+    </sage>
   </p>
 
   <p>
@@ -50,7 +58,8 @@
     Again, you should now calculate <m>\lim\limits_{x\to-\infty} \tanh(x)</m> in 
     SageMath. Also calculate <m>\lim\limits_{x\to+\infty} \cosh(x)</m>, 
     <m>\lim\limits_{x\to-\infty} \cosh(x)</m>, <m>\lim\limits_{x\to+\infty} \sinh(x)</m> 
-    and <m>\lim\limits_{x\to-\infty} \sinh(x)</m> (do you get what you expect?). 
+    and <m>\lim\limits_{x\to-\infty} \sinh(x)</m> (do you get what you expect? Simply replace the 
+    $\tanh$ with the other functions, and the <code>+oo</code> with <code>-oo</code>). 
     What do you get if you replace the hyperbolic trigonometric functions with the 
     circular trigonometric functions cosine, sine and tangent? Does this make sense? 
     </p>
