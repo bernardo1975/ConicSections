@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-conic-sections" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>SConic Sections</title>
+  <title>Conic Sections</title>
 
-  <p> Text of section. </p>
+
+    <definition xml:id="def-conicsection">
+       	<p>A <term>conic section</term> is a curve obtained by the intersection 
+        of the surface of a circular cone and a plane (not passing through the 
+        vertex, also called the <term>apex</term>, of the cone).</p>
+    </definition>  
+
+	<image source="images/conicsection.png"/>
+
+	<p>
+		If the cone is cut by a plane that has the same slope as the cone (see 
+        picture above), then the intersection is a <term>parabola</term>; if 
+        the slope of the plane is less steep, then the intersection is an 
+        <term>ellipse</term> (and, as special case, if the plane is horizontal, 
+        a <term>circle</term>); and if the slope of the plane is steeper, then 
+        the intersection is a <term>hyperbola</term>. 
+	</p>
+
+	<p>
+		Since the circular cone can be described as the set of points 
+        <m>(x, y, z)</m> in three-dimensional space that satisfy  
+        <me>x^2+y^2=\alpha\,z^2</me> for an appropriate <m>\alpha>0</m> 
+        (and we note that <m>\arctan(\alpha)</m> is the slope of the cone), 
+        one can check that all these conic sections can be described as points 
+        <m>(x,y)</m> in the plane that satisfy some quadratic equation 
+        <me>a x^2+b xy+c y^2+d x+e y+f=0</me> for some appropriate constants 
+        <m>a, b, c, d, e, f</m>; in fact, by choosing the coordinate system 
+        appropriately (i.e., by rotating and translating the curves here 
+        appropriately, i.e., by looking at a <em>congruent copy</em> of the curve), 
+        we actually only<fn xml:id="footnote-degenerate-conic">We are discarding 
+        cases here where the quadratic equation reduces to equations of lines, 
+        or yields only a point or even the empty set (i.e., has no solution) 
+        or the whole plane.</fn> have to consider the three equations 
+        <me>\alpha x^2+\beta y^2=1</me> which describes an ellipse, 
+        <me>\alpha x^2-\beta y^2=1</me> which describes a hyperbola, 
+        and <me>\alpha x^2=y</me> which describes a parabola, for some 
+        positive constants <m>\alpha</m> and <m>\beta</m>. While this 
+        classification with respect to quadratic equations is useful, 
+        there other <mdash /> more geometrical <mdash /> ways to describe 
+        these curves.
+	</p>
+
+	<p>
+		In this project, we will look at the geometry of conic sections 
+        using GeoGebra. We are interested in their geometrical properties, 
+        properties they share and that distinguish them from each other. 
+        We will then explore their applications in physics, astronomy and 
+        other technical fields using Python and SageMath.
+	</p> 
 
 </section>
