@@ -185,7 +185,7 @@
 	</p>  
 
 	<table xml:id="table-sports" halign="center">
-        <caption halign="center">Measured parameters for different sports</caption>
+        <caption>Measured parameters for different sports</caption>
         <tabular top="minor">
             <row bottom="major">
                 <cell>Sport</cell>
