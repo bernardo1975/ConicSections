@@ -3,6 +3,169 @@
 <section xml:id="sec-parabola-geogebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Parabola in GeoGebra</title>
 
-  <p> Text of section. </p>
+    <p>
+        In GeoGebra, we construct a parabola by choosing a point, called the <term>focus</term>, 
+        together with a line, the <term>directrix</term>. Among other things, we will discuss 
+        the significance of these two objects here, but let us first construct a parabola: 
+        While you can choose any point and line (no matter of what slope), it might be useful 
+        to choose a point <m>F</m> on the <m>y</m>-axis as focus and the <m>x</m>-axis as directrix.
+    </p>
+
+	<image source="parabola1.png"/>
+
+	<p>
+		We first explore how this construction and the quadratic equation <m>y=\alpha x^2+c</m> 
+        with some parameters <m>\alpha</m> and <m>c</m> are related: Check that the vertex 
+        (i.e., the extremal point, thus the minimum or maximum) of the parabola is given by 
+        the midpoint between the origin and the focus <m>F</m>. Can you express the constant 
+        <m>c</m> in terms of <m>y</m>-coordinate of <m>F</m>? Can you also express the parameter 
+        <m>\alpha</m> in terms of <m>y</m>-coordinate of <m>F</m>?
+	</p>
+
+	<p>
+		This shows that the parameters in the quadratic equation <m>y=\alpha x^2+c</m> 
+        (or any quadratic equation describing a parabola) can be easily calculated 
+        from the location of <m>F</m> in relation to the directrix. However, we can make 
+        the geometrical relation between focus, directrix and parabola even more concrete.
+	</p> 
+
+	<p>
+		We have just seen that the vertex of the parabola has the property that it has its 
+        distance to the focus <m>F</m> is the same as its distance to the directrix. We now 
+        check that this is true for any point <m>P</m> <strong>on</strong> the parabola: 
+        Attach a point <m>P</m> to the parabola, and check that the distance <m>FP</m> 
+        and the distance from <m>P</m> to the directrix (your <m>x</m>-axis) is the same.
+	</p>
+
+	<image source="parabola2.png"/>
+
+	<p>Underlying this observation is the following geometrical definition of the parabola.</p>
+
+    <definition xml:id="def-parabola">
+        <p>A <term>parabola</term> is the <term>equidistant set</term> (or <term>midset</term>) 
+        to a fixed point (the <em>focus</em>) and a line (the <em>directrix</em>) not 
+        containing this point; i.e., the parabola is the 
+        <term>locus</term><fn xml:id="def-locus">A <term>locus</term> is a set of points 
+        whose location is determined by one or more specified conditions. For the parabola, 
+        this condition is the equal distance to the focus and the directrix.</fn> of those 
+        points <m>(x,y)</m> in the plane that have the same distance from the focus and the 
+        directrix.</p>
+    </definition>  
+
+    <p>
+        Let us explain this result in different words.
+        You are properly familiar with the <term>perpendicular bisector</term> of a line 
+        joining two points <m>A</m> and <m>B</m>: Any of the points on the bisector has 
+        the same distance from the point <m>A</m> as it has from the point <m>B</m>. If 
+        you replace one of these two points, say <m>B</m>, with a straight line (not 
+        passing through <m>A</m>), you can ask the same question again: Which points in 
+        the plane have the same distance to <m>A</m> as they have to the line? The answer 
+        is: All points of the parabola that has <m>A</m> as focus and the line as its directrix.
+    </p>
+
+    <p>
+        How different are parabolas from each other? Maybe you remember the following 
+        SageMath code where we plotted a regular parabola and a skinny one:
+
+        <sage>
+            <input>
+            regular = plot(x^2,(x,-2,2),color="purple")
+			skinny = plot(4*x^2,(x,-2,2),color="darkgreen")
+			regular + skinny
+            </input>
+        </sage>
+
+        Despite this, we will now check that all parabolas are <em>similar</em> to 
+        each other: Given any two parabolas, you can translate and rotate one of them 
+        such that its directrix coincides with the directrix of the other one. What you 
+        end up with is the following situation of two parabolas: One we already have 
+        with focus <m>F</m>, and another one with a different focus, let us say 
+        <m>G</m>, both foci on the <m>y</m>-axis. So, construct this second 
+        parabola with focus <m>G</m> on the <m>y-</m>-axis. Then using the 
+        <em>dilate from point</em> tool (from which point? by which factor?), 
+        show that one of the parabolas is just a scaled copy of the other.
+    </p>  
+					
+	<image width="10%" valign="middle" source="GGdilate.png"/>
+
+	<p>
+		So, all parabolas are <em>similar</em> to each other <mdash /> 
+        they all have the <em>same shape</em>!
+    </p>  
+
+    <p>
+        We now consider the original parabola with focus <m>F</m> and point 
+        <m>P</m> on it again. Find the tangent <m>t</m> to the parabola at 
+        <m>P</m>, the line <m>p</m> that is perpendicular to the directrix and 
+        passes through <m>P</m>, and the segment <m>f</m> joining <m>F</m> and 
+        <m>P</m>. Measure the angle at <m>P</m> between <m>p</m> and the tangent 
+        <m>t</m>, and the angle between <m>f</m> and the tangent <m>t</m>, and make 
+        note of your observation as you move <m>P</m> along the parabola (hint: 
+        you might consider adding additional points on the lines to measure the 
+        angles nicely <mdash/> then hide the points again). 
+    </p>
+
+	<image source="parabola3.png"/>
+
+	<p>
+		With the observation you just made, you should now be able to understand 
+        the following explanation for 
+        <url href="https://en.wikipedia.org/wiki/Parabolic_reflector">parabolic mirrors</url> 
+        used in reflecting telescopes, flashlights, and car headlights: In an astronomical 
+        telescope, parallel rays of light coming into a parabolic mirror are focused at a 
+        point <m>F</m>. This is due to the laws of optics since a ray of light is reflected 
+        on the parabolic surface of the mirror according to the rule that the incoming angle 
+        equals the outgoing angle of the ray (which is the observation we just made). For 
+        flashlights and car headlights the ray of lights go the other way: the bulb is 
+        located at the focus <m>F</m> and when turned on, parallel <mdash/> and thus bundled 
+        <mdash/> rays of light leave the parabolic reflector.
+	</p>
+
+	<p>
+		Finally, we have some fun with the osculating circle. Find the 
+        <em>osculating circle</em> to the parabola at the point <m>P</m> 
+        (you can either go through the construction we did earlier in the semester, 
+        or there is also a convenient GeoGebra command that will draw the it). Also 
+        find the the center <m>M</m> of the osculating circle. By construction, line 
+        passing through <m>M</m> and <m>P</m> is the <em>normal</em> to the parabola at 
+        <m>P</m>, i.e., the line perpendicular to the tangent <m>t</m> to the parabola at 
+        <m>P</m>. 
+	</p>
+
+	<p>
+		Instead of the whole normal line that passes through <m>M</m> and <m>P</m> here, 
+        we only draw a ray originating from <m>P</m> and passing through <m>M</m>.
+	</p>
+
+	<image source="parabola4.png"/>
+
+	<p>
+		Now, let us concentrate on this <em>normal</em> (hide most of the other stuff): 
+        Select "Trace On" in its properties (right-click on it), and then move the point 
+        <m>P</m> fairly fast across the parabola. Your picture should look something like 
+        this:
+	</p>
+
+	<image source="images/parabola5.png"/>
+
+	<p>
+		Do you see a kind of curve appearing in the above picture?
+	    If you are not satisfied with your outcome and want another try, then go to 
+        "Refresh View" in the "View" menu.
+	</p>
+
+	<p>
+		Now, refresh the view, hide the normal, but show the center <m>M</m> 
+        of the osculating circle <mdash/> and now check out what kind of curve 
+        the point <m>M</m> "traces out" as you move <m>P</m> (very slowly this time) 
+        along the parabola. This curve is called the <em>evolute</em>.
+	</p>
+
+	<definition xml:id="def-evolute">
+		<p>
+			The locus of all the centers of the osculating circles, is called the 
+            <term>evolute</term> of the given curve.
+		</p>
+	</definition>
 
 </section>

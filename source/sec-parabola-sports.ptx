@@ -3,6 +3,187 @@
 <section xml:id="sec-parabola-sports" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Parabola in Sports</title>
 
-  <p> Text of section. </p>
+    <p>
+        In many sports, an object is "thrown": a ball, a discus, a hammer, a 
+        javelin etc. A shot is "put", and the long jump may be considered as 
+        "throwing one's own body" as far as possible. Often the goal is to 
+        obtain the maximal distance, while sometimes a certain target must be 
+        hit (e.g., in darts, golf, basketball). Let us concentrate on the former 
+        situation here.
+    </p>
+
+    <p>
+        By an <term>ideal projectile motion</term> we mean the motion of an 
+        object (or <em>projectile</em>) that moves along the path under the 
+        action of gravity only; the influence of friction, air drag or other 
+        aerodynamical influences is not considered (although they, in reality, 
+        play a significant role).  
+    </p>
+
+    <p> 
+        Let the projectile be launched from the height <m>b</m> with an initial 
+        velocity <m>v_0</m> at a launch angle <m>\alpha</m>. The horizontal and 
+        vertical components of the initial velocity are then <m>v_0\,\cos(\alpha)</m> 
+        and <m>v_0\,\sin(\alpha)</m>. There is only an acceleration in the vertical 
+        direction, downwards, due to gravity, given by <m>-g</m> where <m>g</m> is the 
+        acceleration due to gravity given by the value 
+        <m>9.81 \frac{\text{m}}{\text{s}^2}</m> on the surface of the earth 
+        (the minus sign signifies that the acceleration is downward). Since the 
+        acceleration is the time derivative of the velocity, integration yields 
+        that horizontal velocity remains unchanged at <m>v_0\,\cos(\alpha)</m>, 
+        while the vertical velocity changes linearly as time progresses according 
+        to <m>v_0\,\sin(\alpha) - g\cdot t</m>. 
+    </p>
+
+    <p>
+        Integrating the horizontal and vertical velocities again with respect 
+        to the time <m>t</m>, yields the horizontal and vertical 
+        <term>displacements</term> at time <m>t</m>. The horizontal displacement is given by
+        <me>x(t) = v_0\,\cos(\alpha)\cdot t,</me>
+        while the vertical displacement <mdash/>taking the initial height <m>b</m> 
+        into account <mdash/> is given by 
+        <me>y(t) = v_0\,\sin(\alpha)\cdot t - \frac12 g\cdot t^2 + b.</me>
+    </p>
+
+    <p>
+        Let us explore this projectile motion now in Python/SageMath: Define a function 
+        <code>f</code> that has arguments <code>v0</code>, <code>alpha</code> and <code>t</code> 
+        as well as <code>b</code> (the last one with a default value of <code>0</code>). 
+        It should return the tuple <code>(x,y)</code>, i.e., the <m>x</m>- and 
+        <m>y</m>-coordinates of the projectile at time <m>t</m>. Note that cosine and 
+        sine take angles in radians not degrees, so if you want to measure your angles in 
+        degrees you have to multiply <m>\alpha</m> by a factor of <m>\frac{\pi}{180}</m> 
+        in the above formulae.
+    </p>
+
+    <p>
+        You can now explore the motion of your projectile for different values of 
+        <code>v0</code> and <code>alpha</code> (we let <code>b=0</code> for the moment). 
+        You can plot the path your projectile will take by using a <code>parametric_plot</code>. 
+        Fix a value of <m>v_0</m> and then by varying the value of <m>\alpha</m> find the angle 
+        where you obtain the maximal horizontal range (i.e., the value of $x(t)$ where $y(t)=0$, 
+        i.e., where the projectile returned to the <m>x</m>-axis). 
+    </p>
+
+    <p> 
+        As a hint: If you coded your function correctly, the code (all in one line!)
+        <pre>
+            show(sum([parametric_plot(f(x,10,5*i),(x,0,2),ymin=0,
+                aspect_ratio=1,color=hue(i/20),
+                legend_label=("%d degrees" % (5*i))) for i in 
+                range(18,-1,-1)]),xmax=11,figsize=10)
+        </pre>
+        should give the picture below showing the parabolic paths of projectiles 
+        with the same initial velocity <code>v0=10</code> but different angles 
+        (in steps of <m>5^{\circ}</m>).
+    </p>
+
+	<image source="projectile1.png"/>
+
+	<p>
+		You should see for a projectile to hit the ground (i.e., <m>y=0</m>) 
+        at a certain distance, you either have none, one or 
+        two<fn xml:id="artillery">In military science, the two possibilites are 
+        called <em>direct fire</em> and <em>plunging fire</em>.</fn> angles for a 
+        given initial velocity (there is only one angle to achieve the maximal distance).   
+	</p>
+
+	<p>
+		In the above formula, we can make <m>t</m> the subject in 
+		<me>x = v_0\,\cos(\alpha)\cdot t,</me>
+	    and then plug this into the formula for <m>y</m> to obtain
+		<me> y = - \frac{g}{2\,v_0^2\,\cos^2(\alpha)}\,x^2+\tan(\alpha)\,x+b.</me>
+		Clearly, the right-hand side is a quadratic polynomial in <m>x</m>, 
+        and therefore the function <m>y</m> (now a function of <m>x</m>) is 
+        therefore indeed a parabola. So, alternatively to the above 
+        <code>parametric_plot</code>, you can also do a normal <code>plot</code> 
+        using this function <mdash/> with the same result (do this).
+	</p>
+
+	<p>
+		Furthermore, we can now easily calculate the <term>horizontal range</term>, 
+        i.e., the value of <m>x</m> (greater than <m>0</m>) where the projectile 
+        returned to the <m>x</m>-axis (that is, has value <m>y=0</m>): 
+        This is amounts to solving the quadratic equation 
+		<me> 0 = - \frac{g}{2\,v_0^2\,\cos^2(\alpha)}\,x^2+\tan(\alpha)\,x+b.</me>
+		for <m>x</m> and only considering the positive, larger, root. Remember 
+        that we have done something like this before? Find that code and 
+        modify it, so you can use it in this problem (i.e., for values <m>v_0</m>, 
+        <m>\alpha</m> and <m>b</m>, find the horizontal range).
+	</p>
+
+	<p>
+		The formula that one obtains for the horizontal range <m>x_r</m> is
+		<me>x_r=\frac{v_0^2}{g}\,\cos(\alpha)\left(\sin(\alpha)+\sqrt{\sin^2(\alpha)+\frac{2\,g\,b}{v_0^2}}\right).</me>
+		For <m>b=0</m> this reduces to (using trig identities)
+		<me>x_r= \frac{v_0^2}{g}\,\sin(2\alpha),</me>
+		and thus we obtain the maximal horizontal range <m>\frac{v_0^2}{g}</m> 
+        for the angle <m>\alpha=45^{\circ}</m>. Note that the initial velocity 
+        <m>v_0</m> enters quadratically in this maximal range <mdash/> this is 
+        the reason why athletes practice that much to achieve their maximal 
+        "push" at the moment they are realeasing the object they are throwing!
+	</p>
+
+	<p>
+		If the initial height <m>b</m> is not zero, then one can find the maximal 
+        horizontal range and the optimal angle by differentiating the above expression 
+        for <m>x_r</m> with respect to <m>\alpha</m>, setting it equal to zero and 
+        solving the equation obtained. Without going through the steps here, the 
+        maximal horizontal range <m>x_{\max}</m> is then given by
+		<me>x_{\max} = \frac{v_0^2}{g}\,\sqrt{1+\frac{2\,g\,b}{v_0^2}}.</me>
+		The optimal angle <m>\alpha_{\max}</m> to obtain this maximal horizontal range is 
+		<me>\cos(2\alpha_{\max}) = \frac{g\,b}{v_0^2+g\,b},</me>
+		or
+		<me>\alpha_{\max} = \frac12\,\arccos\left(\frac{g\,b}{v_0^2+g\,b}\right).</me>
+		(Again note, the the angle here is given in radians, so you might want to 
+        multiply this result by <m>\frac{180}{\pi}</m> to obtain degrees.)
+	</p>
+
+	<p>
+		Let us explore these formulae:
+		<ul>
+			<li>Check that for some value <m>b\gt 0</m> the optimal angle 
+            <m>\alpha_{\max}</m> is an increasing function in <m>v_0</m>, 
+            but also less than <m>45^{\circ}</m> with 
+            <m>\lim\limits_{v_0\to+\infty} \alpha_{\max} = 45^{\circ}</m> 
+            (so, only for high velocities the optimal angle is close to 
+            <m>45^{\circ}</m>.</li>
+			<li>Check that for a given initial velocity <m>v_0</m>, 
+            the optimal angle <m>\alpha_{\max}</m> is a descreasing function 
+            in <m>b</m> (with <m>\alpha_{\max}=45^{\circ}</m> for <m>b=0</m>).</li>
+			<li>Also, fix a value of <m>b\gt 0</m>, and plot <m>x_{\max}</m> as a 
+            function of <m>v_0</m>. Do you observe that <mdash/> except for very 
+            small values of <m>v_0</m> <mdash/> this function is essentially a 
+            quadratic function? So again, the initial velocity <m>v_0</m> 
+            enters quadratically in the maximal range.</li>
+		</ul>     
+	</p>
+
+	<p>
+		Due to athlete's technique and muscular system, aerodynamic effects on the object etc., 
+        the optimal angles will actually differ from the above optimal formula <mdash/> 
+        achieving a higher initial velocity is usually better than achieving the exact 
+        optimal angle. Measured values for different sports can be found in the following table:
+	</p>  
+
+	<table xml:id="table-sports">
+        <caption>Measured parameters for different sports</caption>
+        <tabular top="minor" halign="center">
+            <row bottom="major">
+                <cell>Sport</cell>
+                <cell><m>\alpha</m> (in <m>\mbox{}^{\circ}</m>) </cell>
+                <cell><m>v_0</m> (in <m>\frac{\text{m}}{\text{s}}</m>) </cell>
+                <cell><m>b</m> (in m)</cell>
+            </row>
+            <row> <cell>shot put</cell><cell>38-42</cell><cell>14-15</cell><cell>2.2-2.4</cell></row>
+            <row> <cell>discus throw</cell><cell>35-37</cell><cell>25-28</cell><cell>1.8-2.0</cell></row>
+            <row> <cell>javelin throw</cell><cell>34-36</cell><cell>32-38</cell><cell>2.0-2.2</cell></row>
+            <row> <cell>hammer throw</cell><cell>44</cell><cell>25-30</cell><cell>2.0-2.2</cell></row>
+            <row> <cell>golf</cell><cell>20</cell><cell>70</cell><cell>0.0</cell></row>
+            <row> <cell>long jump</cell><cell>20</cell><cell>6-7</cell><cell>1.0-1.2</cell></row>
+            <row> <cell>football (soccer)</cell><cell>36-37</cell><cell>28</cell><cell>0.0</cell></row>
+            <row bottom="minor"> <cell>baseball (home run)</cell><cell>24-34</cell><cell>43-47</cell><cell>0.7-1.0</cell></row>
+        </tabular>
+    </table>
 
 </section>
