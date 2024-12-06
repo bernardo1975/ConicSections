@@ -185,7 +185,6 @@
 	</p>  
 
 	<table xml:id="table-sports" halign="center">
-        <caption>Measured parameters for different sports</caption>
         <tabular top="minor">
             <row bottom="major">
                 <cell>Sport</cell>
@@ -202,6 +201,7 @@
             <row> <cell>football (soccer)</cell><cell>36-37</cell><cell>28</cell><cell>0.0</cell></row>
             <row bottom="minor"> <cell>baseball (home run)</cell><cell>24-34</cell><cell>43-47</cell><cell>0.7-1.0</cell></row>
         </tabular>
+        <caption>Measured parameters for different sports</caption>
     </table>
 
 </section>
