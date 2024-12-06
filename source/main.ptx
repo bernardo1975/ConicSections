@@ -6,7 +6,7 @@
 
   <book xml:id="my-great-book">
     <title>Conic Sections</title>
-    <subtitle>(MATH1235 Python Programming \&amp; Mathematical Software))</subtitle>
+    <subtitle>Using GeoGebra to explore Conic Sections</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
