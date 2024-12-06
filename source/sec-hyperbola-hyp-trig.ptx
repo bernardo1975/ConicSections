@@ -33,9 +33,9 @@
     Let us plot them in <em>SageMath</em>.
     <sage>
       <input>
-      coshgraph = plot(cosh(x),(x,-3,3),color="purple",thickness=2,aspect_ratio=1,legend_label="cosh")
-      sinhgraph = plot(sinh(x),(x,-3,3),color="darkgreen",thickness=2, linestyle=":",legend_label="sinh")
-      tanhgraph = plot(tanh(x),(x,-3,3),color="red",thickness=2, linestyle="-.",detect_poles=True,ymax=3,ymin=-3,aspect_ratio=1,legend_label="tanh")
+      coshgraph = plot(cosh(x),(x,-4,4),color="purple",thickness=2,aspect_ratio=1,legend_label="cosh")
+      sinhgraph = plot(sinh(x),(x,-4,4),color="darkgreen",thickness=2, linestyle=":",legend_label="sinh")
+      tanhgraph = plot(tanh(x),(x,-4,4),color="red",thickness=2, linestyle="-.",detect_poles=True,ymax=3,ymin=-3,aspect_ratio=1,legend_label="tanh")
       coshgraph+sinhgraph+tanhgraph
       </input>
     </sage>
@@ -59,7 +59,7 @@
     SageMath. Also calculate <m>\lim\limits_{x\to+\infty} \cosh(x)</m>, 
     <m>\lim\limits_{x\to-\infty} \cosh(x)</m>, <m>\lim\limits_{x\to+\infty} \sinh(x)</m> 
     and <m>\lim\limits_{x\to-\infty} \sinh(x)</m> (do you get what you expect? Simply replace the 
-    $\tanh$ with the other functions, and the <code>+oo</code> with <code>-oo</code>). 
+    <m>\tanh</m> with the other functions, and the <code>+oo</code> with <code>-oo</code>). 
     What do you get if you replace the hyperbolic trigonometric functions with the 
     circular trigonometric functions cosine, sine and tangent? Does this make sense? 
     </p>
@@ -69,7 +69,7 @@
       In calculus, you calculate derivatives of the circular trigonometric functions, 
       e.g.<fn xml:id="tangent-derivative">Hopefully <em>SageMath</em> gives you the 
       expression <m>\tan^2(x)+1</m> here and not the far more useless expression 
-      involving the secant function that CXC/CAPE seems to love having you memorize!</fn>, 
+      involving the secant function that people seem to love memorizing!</fn>, 
       <sage>
         <input>
         diff(tan(x),x)
@@ -78,10 +78,15 @@
         (tan(x))^2+1
         </output>
       </sage>
-      Use <em>SageMath</em> to calculate the derivatives of the hyperbolic trigonometric 
-      functions, and make a table comparing the circular trigonometric functions and their 
-      derivatives with the hyperbolic trigonometric functions and their derivatives. From 
-      this table <mdash/> and the <em>Fundamental Theorem of Calculus</em> <mdash/> it is 
+      Let us use <em>SageMath</em> to calculate the derivatives of the hyperbolic trigonometric 
+      functions. Can you make a table comparing the circular trigonometric functions and their 
+      derivatives with the hyperbolic trigonometric functions and their derivatives? 
+      <sage>
+        <input>
+        diff(tanh(x),x)
+        </input>
+      </sage>      
+      From this table <mdash/> and the <em>Fundamental Theorem of Calculus</em> <mdash/> it is 
       immediate what the integrals/anti-derivatives of the (hyperbolic or not) sine and 
       cosine are (namely?). For the tangent, we get
       <sage>
@@ -98,6 +103,12 @@
       might write as <m>\ln</m>. We have included a <code>full_simplify()</code> in the 
       above command to force <em>SageMath</em> to <em>not(!)</em> use the secant. What is 
       an anti-derivative of the hyperbolic tangent?  
+      <sage>
+        <input>
+        integrate(tanh(x),x).full_simplify()
+        </input>
+      </sage>
+
     </p>
 
     <p>
