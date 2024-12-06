@@ -12,7 +12,10 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./ch-conic-sections.ptx" />
+    <xi:include href="./ch-parabola.ptx" />
+    <xi:include href="./ch-ellipse.ptx" />
+    <xi:include href="./ch-hyperbola.ptx" />
 
 
     <!-- Include backmatter -->
