@@ -3,6 +3,281 @@
 <section xml:id="sec-ellipse-astronomy" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Ellipse in Astronomy</title>
 
-  <p> Text of section. </p>
+    <p>
+        Based on <url href="https://en.wikipedia.org/wiki/Tycho_Brahe">Tycho Brahe's</url> 
+        excellently accurate and comprehensive astronomical and planetary observations, 
+        <url href="https://en.wikipedia.org/wiki/Johannes_Kepler">Johannes Kepler</url> 
+        formulated the three 
+        <url href="https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion">Kepler's 
+        laws of planetary motion</url> between 1609 and 1619:
+        <ol>
+            <li>The orbit of a planet is an ellipse with the Sun at one of the two foci.</li>
+            <li>A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time.</li>
+            <li>The square of the orbital period of a planet is proportional to the cube of the semi-major axis of its orbit.</li>
+        </ol>
+        The first two laws are contained in his book <url href=""><em>Astronomia Nova</em></url> ("New Astronomy"), 
+        published in 1609, based on Tycho Brahe's accurate observations of 
+        Mars<fn xml:id="mars-eccentricity">Mars coincidentally has the second highest 
+        eccentricity (<m>e=0.0934</m>) of all planets after Mercury (<m>e=0.2056</m>).</fn>, 
+        while the third law is contained in his book 
+        <url href="https://en.wikipedia.org/wiki/Harmonices_Mundi"><em>Harmonices Mundi</em></url> 
+        ("The Harmony of the World"), published in 1619. 
+        <url href="https://en.wikipedia.org/wiki/Isaac_Newton">Sir Isaac Newton</url> obtained a 
+        theoretical explanation of Kepler's laws of motion of the planets based on his three laws of 
+        motion <mdash/> the basis of classical mechanics <mdash/> in his work 
+        <url href="https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica"><em>Philosophiæ Naturalis Principia Mathematica</em></url> 
+        ("Mathematical Principles of Natural Philosophy"), published in 1687.
+    </p>
+
+    <p>
+        The first law is a statement about the shape of the orbit, an ellipse, and that 
+        the sun is contained at one of the two foci, while the second law is a statement 
+        about the speed with which the planet moves around on the orbit. They improve the 
+        previous model<fn xml:id="Copernicus-ref">Copernicus' model is published in his 
+        book <em>De revolutionibus orbium coelestium</em> ("On the Revolutions of the Celestial Spheres") 
+        in 1543.</fn> by <url href="https://en.wikipedia.org/wiki/Nicolaus_Copernicus">Nicolaus Copernicus</url> 
+        where a planetry orbits is a circle with the Sun at the center on which the planet moves 
+        with constant speed. The third law compares different planets to each other since it captures 
+        the relationship between the distance of planets from the Sun, and their orbital periods. 
+        We will look at the first and second law here.
+    </p>
+
+    <p>
+        The first law places the Sun at one of the foci of an ellipse which is the orbit 
+        of the planet. Mathematically, it is therefore useful to place one of the foci of 
+        the ellipse at the origin of the coordinate system, and, in fact, use 
+        <em>polar coordinates</em> to represent an ellipse. The formula of an ellipse in 
+        polar coordinates <m>(r,\theta)</m> (i.e., with radial coordinate <m>r</m> and 
+        angular coordinate <m>\theta</m>)
+        <me> r = \frac{\ell}{1+e\,\cos(\theta)} </me>
+        where <m>e</m> is the <term>eccentricity</term> and <m>\ell</m> is the 
+        <term>semi-lactus rectum</term> of the ellipse (we explain the latter shortly). 
+        For the orbit of the Earth, one has <m>e=0.0167086</m>, a value close to zero 
+        and thus Earth's orbit is almost a circle, and <m>\ell = 149\,555\,000</m>km. 
+        Using SageMath and <code>polar_plot</code> we can plot an accurate picture of 
+        the shape of Earth's orbit (the units on the axes are million km):
+        <sage>
+            <input>
+            polar_plot(149.555/(1+0.0167086*cos(x)),(x,0,2*pi))
+            </input>
+        </sage>
+        The <term>latus rectum</term> is the <term>chord</term><fn xml:id="term-chord">A 
+        <term>chord</term> is a line segment joining two points on any curve, e.g., on 
+        the ellipse.</fn> parallel to the directrix (and thus prependicular to the major axis) 
+        and passing through one of the two foci; half of its length is called 
+        <term>semi-lactus rectum</term> which is therefore the distance from the foci 
+        to the point on the ellipse.  
+    </p>
+
+	<image source="latusrectum.png"/>
+
+	<p>
+		We note that from the eccentricity <m>e</m> and the semi-lactus rectum 
+        <m>\ell</m> one can calculate all the other parameters of the ellipse: 
+        The semi-major axis is given by <m>a=\frac{\ell}{1-e^2}</m>, the semi-minor 
+        axis is given by <m>b=\frac{\ell}{\sqrt{1-e^2}}</m>, the linear eccentricity 
+        is given by <m>c=e\cdot\frac{\ell}{1-e^2}</m> etc. (in fact, given any two 
+        quantities, one can calculate the others).
+	</p>
+
+	<p>
+		Two points on a planetary orbit are of particular interest: The 
+        <term>perihelion</term> is the point on the orbit that is closest to the 
+        Sun, while the <term>aphelion</term> is the point that is farthest from the Sun. 
+        In polar coordinates they are located at <m>\theta=0^{\circ}</m> and 
+        <m>\theta=180^{\circ}</m>, respectively.
+        <sage>
+            <input>
+            polar_plot(1/(1+0.5*cos(x)),(x,0,2*pi))+point((0,0),size=35)+point((2/3,0),size=35)+point((-2,0),size=35)+text("Sun",(0,.1),fontsize='large',color='black')+text("Perhelion",(2/3,.1),fontsize='large',color='black')+text("Aphelion",(-2,.1),fontsize='large',color='black')
+            </input>
+        </sage>
+        One can therefore easily calculate the distances:
+        <ul>
+            <li>the distance Sun to perhelion is <m>\frac{\ell}{1+e}</m>, and</li>
+            <li>the distance Sun to aphelion is <m>\frac{\ell}{1-e}</m>.</li>
+        </ul>
+        Perihelion and aphelion are sometimes incorrectly used for the orbits of objects 
+        about bodies other than the Sun. The general terms for orbits around any center 
+        of mass (not just the Sun) are <term>periapsis</term> and <term>apoapsis</term>.
+	</p>
+
+	<p>
+		Some people <em>wrongly</em> believe that the seasons are due to this varying 
+        distance of the Earth to the Sun <mdash/> this is not the case. The seasons 
+        are due to the Earth's axial tilt of <m>23.43696^{\circ}</m>, which is the 
+        angle between the plane that contains the orbit of the Earth around the Sun 
+        and the plane through the equator of the Earth. By the <em>conversation of 
+        angular momentum</em> this tilt (essentially) stays the same as the Earth 
+        wanders around the Sun, thus the solstices (the shortest and longest day 
+        of the year around June 21st and December 21st) and the equinoxes (the days 
+        where night time and daylight have equal length all over Earth around March 
+        21st and September 23rd) occur on specific points on Earth's orbit. the 
+        following picture shows the relationship between the perhelion (periapsis), 
+        the aphelion (apoapsis) and the seasonal dates (this picture is taken from 
+        <url href="https://upload.wikimedia.org/wikipedia/commons/f/f0/Seasons1.svg">here</url>).
+	</p>
+
+	<image source="Seasons1.svg"/>
+
+	<p>
+		As you can in this picture the perihelion (periapsis) falls on January 3rd, 
+        and thus almost on the winter solstice (December 21st). If the two events 
+        would coincide, then the two equinoxes would be given by the points on the 
+        ellipse connected by the latus rectum; in other words, in that case the 
+        equinoxes would be given by the points where the ellipse crosses the 
+        <m>y</m>-axis in the first SageMath picture we plotted above. To make 
+        some of the calculations easier below, we will pretend that the two 
+        solstices coincide with the perihelion and the aphelion, respectively.
+	</p>
+
+	<p>
+		Let us now look at Kepler's second law, the statement about the speed 
+        of a planet around the Sun. It states that the "area speed" is constant. 
+        In equal times, the segment connecting the focus with the planet will 
+        sweep out equal areas <mdash/> and thus close to the perihelion the 
+        planet will move faster than close to the aphelion (i.e., the closer 
+        the planet is to the Sun, the faster it moves).
+	</p>
+
+	<image source="Kepler2.png"/>
+
+	<p>
+		Can we calculate these areas? Luckily yes, and for this the above polar 
+        form of the ellipse is helpful again. Recall that areas can be calculated 
+        using integrals, so what integral do we have to calculate here? If you 
+        look at a very small angle <m>\varDelta\theta</m>, the area the 
+        corresponding segment sweeps out is approximately a circular sector 
+        of radius <m>r</m> and thus has area 
+		<me>\frac12\,r^2\,\varDelta\theta = \frac12\,\left(\frac{\ell}{1+e\cos(\theta)}\right)\cdot \varDelta\theta</me> 
+		Changing this now to an integral, the area swept out by travelling 
+        from polar angle <m>\theta_1</m> to polar angle <m>\theta_2</m> 
+        (measured with the focus at the origin) is 
+		<me>\frac12\int\limits_{\theta_1}^{\theta_2} \left(\frac{\ell}{1+e\,\cos(\theta)}\right)^2\,\operatorname{d}\!\theta .</me>					
+		SageMath can find the anti-derivative of 
+        <m> \frac12\int \left(\frac{\ell}{1+e\,\cos(\theta)}\right)^2\,\operatorname{d}\!\theta</m>:
+        <sage>
+            <input>
+			e, theta, l = var('e, theta, l')
+			assume(1-e^2>0)
+			((1/2)*integrate((l/(1+e*cos(theta)))^2,theta)).show()                    	
+			</input>
+            <output>
+            l^2*(e*sin(theta)/((e^3 + e^2 - e - (e^3 - e^2 - e + 1)*sin(theta)^2/(cos(theta) + 1)^2 - 1)*(cos(theta) + 1)) + arctan((e - 1)*sin(theta)/(sqrt(-e^2 + 1)*(cos(theta) + 1)))/((e^2 - 1)*sqrt(-e^2 + 1)))
+            </output>
+        </sage>
+        However, we will use the command <code>numerical_integral</code> to explore 
+        Kepler's second law further. If you use <code>numerical_integral</code> to 
+        evaluate integrals numerically, SageMath will return two numbers: The 
+        calculated numerical value of the integral, and the possible error made 
+        by calculating the integral not exact but by some numerical method. We 
+        will only be interested in the first number here.
+	</p>
+
+	<p>
+		It takes the Earth <m>365.256363004</m> days to orbit once around the Sun 
+        (i.e., approximately, <m>365\frac14</m> days, and therefore we have a leap 
+        year every <m>4</m> years). Thus, on average, we expect that it takes the 
+        Earth slightly more than a day (namely, 
+        <m>\frac{365.256\ldots}{360}\approx 1.0146\ldots = 1\ \text{day}\ 21</m> 
+        minutes) to sweep out an elliptical sector of center angle <m>1^{\circ}</m>. 
+        However, near the perihelion the Earth will move faster than average, so it 
+        sweeps out such an angle of <m>1^{\circ}</m> in less time, while near the 
+        aphelion the Earth will move slower and thus it will need more time to sweep 
+        out this angle. 
+	</p>
+
+	<p>
+		We first calculate the total area of an ellipse with the same eccentricity 
+        than Earth's orbit (the semi-lactus rectum enters as a quadratic factor 
+        <m>\ell^2</m>, thus we can simply set it equal to one for the moment).
+        <sage>
+            <input>
+			numerical_integral((1/2)*1/(1+0.016710219*cos(x))^2,0,2*pi)                    	
+			</input>
+            <output>
+            (3.142908960083767, 3.489329891785705e-14)
+            </output>
+        </sage>
+ 		Since it is almost a circle, we almost get the value of <m>\pi</m> here; 
+        the possible error is around <m>3\cdot 10^{-14}</m> and thus we can 
+        certainly trust this numerical calculation. The exact result is
+ 		<me>\pi\cdot a\cdot b = \frac{\pi\cdot \ell^2}{(\sqrt{1-e^2})^3} = \frac{\pi\cdot\ell^2}{(\sqrt{1-0.016710219^2})^3}</me>
+ 		giving the same value.
+ 	</p>
+
+ 	<p>
+ 		We now calculate how long it takes the Earth to travel <m>1^{\circ}</m> on 
+        its orbit, and then plot the result:
+        <sage>
+            <input>
+			totalarea = numerical_integral((1/2)*1/(1+0.016710219*cos(x))^2,0,2*pi)[0]
+			datalist = [(365.256363004/totalarea)*numerical_integral((1/2)*1/(1+0.016710219*cos(x))^2,i*2*pi/360,(i+1)*2*pi/360)[0] for i in range(360)] 
+			list_plot(datalist, axes_labels=["angle","days"]) + plot(365.256363004/360,(x,0,360),linestyle=":",color="black")                   	
+			</input>
+	    </sage>
+	    As you can see, near the perihelion it takes the Earth less than a day to sweep out an elliptical sector with central angle of <m>1^{\circ}</m> (close to <m>0.98\ \text{days}</m> which is <m>29</m> minutes short of a full day), while near the aphelion (in summer) we need around <m>1.05\ \text{days}\ = 1\ \text{day}\ 1\ \text{hour}\ 12</m> minutes for the same angle.   
+	</p>
+
+	<p>
+		Let us look at another consequence of Earth's elliptical orbit: If Earth's 
+        orbit would be a perfect circle, the two equinoxes would be exactly half a 
+        year apart. In our approximation, the spring equinox happens at polar angle 
+        <m>90^{\circ}</m>, while the autumn equinox happens at polar angle <m>270^{\circ}</m>. 
+        So, the combined time for spring and summer is proportional to
+		<me>\frac12\int\limits_{90^{\circ}}^{270^{\circ}} \left(\frac{\ell}{1+e\,\cos(\theta)}\right)^2\,\operatorname{d}\!\theta,</me>
+		while the combined time for autumn and winter is propoportional to
+		<me>\frac12\int\limits_{0^{\circ}}^{90^{\circ}} \left(\frac{\ell}{1+e\,\cos(\theta)}\right)^2\,\operatorname{d}\!\theta + \frac12\int\limits_{270^{\circ}}^{360^{\circ}} \left(\frac{\ell}{1+e\,\cos(\theta)}\right)^2\,\operatorname{d}\!\theta.</me>
+		By this consideration, we find that spring and summer combined last a total of
+        <sage>
+            <input>
+			totalarea = numerical_integral((1/2)*1/(1+0.016710219*cos(x))^2,0,2*pi)[0]
+			springsummer = (365.256363004/totalarea)*numerical_integral((1/2)*1/(1+0.016710219*cos(x))^2,pi/2,3*pi/2)[0] 
+			springsummer.n()                   	
+			</input>
+			<output>
+			186.513618240123
+			</output>
+		</sage>
+	    i.e., approximately <m>186\frac12</m> days. Correspondingly, autumn and winter 
+        last then a total of <m>178\frac34</m> days, or approximately <m>7\frac34</m> 
+        days less than spring and summer combined. Since the perihelion and the aphelion 
+        don't fall on the solstices, we actually got one day too much here, but we can 
+        acount for <m>6\frac34</m> days:
+	    Since there are more months with <m>31</m> days during the spring-summer months and 
+        winter also contains the short February, there are <m>2\frac34</m> less days 
+        between September 21st and March 21st than the other way round; and since the 
+        equinox falls on September 23rd (and not September 21st), we gain another <m>4</m> 
+        days for the spring-summer part of the year. 
+	    So the small eccentricity of the Earth's orbit already makes a difference of 
+        around a week when we maesure the time between subsequent equinoxes!
+	</p>
+
+<!--
+					In our approximation, the equinoxes would happen at the endpoints of the <em>minor axis</em>. The center of the ellipse has coordinates (the mean value of the perihelion and the aphelion) 
+					<me>\left(-\frac{e\cdot \ell}{1-e^2},0\right) ,</me>
+					thus the endpoints of the minor axis (given that the length of the semi-minor axis is given by <m>b=\frac{\ell}{\sqrt{1-e^2}}</m>) have coordinates
+					<me>\left(-\frac{e\cdot \ell}{1-e^2},\frac{\ell}{\sqrt{1-e^2}}\right) \quad\text{and}\quad \left(-\frac{e\cdot \ell}{1-e^2},-\frac{\ell}{\sqrt{1-e^2}}\right) .</me> 
+					For the Earth, the polar angles of these two points are 
+-->
+
+	<p>
+		Kepler's laws of planetary motion also apply to other celestial bodies that 
+        wander around the sun, e.g., asteroids and comets. For example, 
+        <url href="https://en.wikipedia.org/wiki/Halley%27s_Comet">Halley's Comet</url> 
+        is a famous comet which orbits the Sun in <m>75.315</m> years (its last perihelion 
+        was in 1986, the next one should be in mid-2061 <mdash/> track it 
+        <url href="https://theskylive.com/halley-info">here</url>) and was observed 
+        from the Earth since ancient times. The eccentricity of its orbit is <m>0.967</m>. 
+        Note that Kepler's third law allows us to immediately calculate the semi-major 
+        axis from the knowledge of Earth's semi-major axis: Its length is 
+        <m>\sqrt[3]{75.315^2} \approx 17.8</m> times the length of Earth's semi-major axis. 
+	</p>
+
+	<p>
+		Redo some of the above calculations now for Halley's Comet: Start by plotting 
+        a picture of its elliptic orbit. On average, it takes around <m>\frac15</m> 
+        of a year to travel <m>1^{\circ}</m>, but how much variation is there 
+        throughout its journey? Can you interpret the graph you are getting here?
+    </p>
 
 </section>
