@@ -8,6 +8,8 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
-
+  <xi:include href="sec-history.ptx" />
+  <xi:include href="sec-conic-sections.ptx" /> 
+  <xi:include href="sec-geogebra.ptx" />
+  
 </chapter>
