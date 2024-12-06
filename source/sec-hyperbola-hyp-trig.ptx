@@ -136,7 +136,7 @@
 	    <me> t \mapsto \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix} </me>
 	    is a <em>parametrization</em> of the <em>unit circle</em> <m>x^2+y^2=1</m>. 
       Thus the coordinates of any point on the circle can be expressed as 
-      <m>(\cos(t),\sin(t))</m> for some value of <m>t\in[0,2*\pi)</m>.
+      <m>(\cos(t),\sin(t))</m> for some value of <m>t\in[0,2\cdot\pi)</m>.
 	  </p>
 
 	  <p>
@@ -144,7 +144,7 @@
       for some positive parameters <m>\alpha, \beta\gt 0</m> describe hyperbolas. Let us 
       consider the function <m>f(x,y) = x^2 - y^2</m> now, and make a 
       <code>contour_plot</code> of this function (you might want to consult the handout 
-      "Plotting in Sage - Part 2/Advanced Plotting in Sage" again for this). Add an 
+      "SageMath Lecture 2: Plotting in Sage" again for this). Add an 
       <code>implicit_plot</code> to this contour plot that highlights the level set 
       with equation <m>x^2-y^2=1</m>; this is the <em>unit hyperbola</em>. Finally, 
       make a parametric plot similar to the one above, but with cosine and sine 
@@ -156,7 +156,7 @@
 	    You should see that 
 	    <me> t \mapsto \begin{pmatrix} \cosh(t) \\ \sinh(t) \end{pmatrix}, \qquad t\in\mathbb{R} </me>
 	    is a <em>parametrization</em> of the <em>unit hyperbola</em> 
-      (more precisely, part of it, namely which one?). Now there are many 
+      (more precisely, only part of it &mdash; which one?). Now there are many 
       parametrizations of both the unit circle as well as the unit hyperbola, 
       so what makes this one special? E.g., here is another parametrization of the unit circle:
       <sage>
@@ -177,11 +177,12 @@
 	      <li>it is the length of the circular arc on the unit circle from the point 
         <m>(1,0)</m> to <m>(\cos(t),\sin(t))</m> in counter-clockwise direction.</li>
 	    </ul>
-	    As a result, the trigonometric functions can all be defined on the unit circle.
+	    As a result, the trigonometric functions can all be defined on the unit circle 
+      (in fact, in two slightly different ways).
 	  </p>
 
 		<image source="trig_unit1.png"/>
-		<!-- <image width="45%" source="images/trig_unit2.png"/> -->
+		<image source="trig_unit2.png"/>
 
 		<p>
 			Instead of an angle (or arc length), the parameterization for the hyperbolic 
@@ -213,7 +214,7 @@
       using the exponential function as
 			<me> \cosh(x) = \frac{e^x+e^{-x}}{2} \quad\text{and}\quad \sinh(x) = \frac{e^x-e^{-x}}{2} .
 			</me>
-			You should be familiar with corresponding formulae for the (circular) cosine and sine 
+			You might be familiar with corresponding formulae for the (circular) cosine and sine 
       from <em>Euler's formula</em> which one uses in <em>de Moivre's formula</em> <mdash/> state them.
 		</p>
 
