@@ -3,6 +3,134 @@
 <section xml:id="sec-hyperbola-geogebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Hyperbola in GeoGebra</title>
 
-  <p> Text of section. </p>
+  <p>
+    In GeoGebra, we construct a hyperbola similar to the ellipse, i.e., we first choose 
+    two points, called the <term>foci</term> <m>F_1</m> and <m>F_2</m>, together with a 
+    point on the hyperbola. We will thus proceed similar to the last section. In particular, 
+    it might be useful to choose the two foci <m>F_1</m> and <m>F_2</m> to lie on the 
+    <m>x</m>-axis symmetrically around the origin. Again, the third point <m>A</m> through 
+    which the hyperbola passes is only needed if we want to change the hyperbola. We note 
+    that the hyperbola actually consists of two curves, called the two <term>branches</term> 
+    of the hyperbola.
+  </p>
+
+  <p>
+    We use the same vocabulary as for ellipses: The midpoint between the two foci is called 
+    the <term>center</term> of the hyperbola. The intersection of the line through the foci 
+    and the hyperbola yield the two <term>vertices</term> of the hyperbola. We denote the 
+    distance from the center to a focus by <m>c</m>, and the distance from the center to a 
+    vertex by <m>a</m> (note that <m>c\gt a</m> while for the ellipse we had <m>c\lt a</m>). 
+    If you constructed your hyperbola symmetrically around the origin, your foci should be 
+    have coordinates <m>(-c,0)</m> and <m>(c,0)</m>, the center is at the origin <m>(0,0)</m> 
+    and the vertices have coordinates <m>(-a,0)</m> and <m>(a,0)</m>. As before, we call 
+    <m>a</m> the (length of) the <term>semi-major axis</term> and <m>c</m> the 
+    <term>linear eccentricity</term>. 
+  </p>
+
+	<image source="hyperbola1.png"/>
+
+	<p>
+    We calculate, respectively construct, a number <m>b</m> by <m>c^2=a^2+b^2</m>, i.e., 
+    <m>b=\pm\sqrt{c^2-a^2}</m>. Constructively, we get the number <m>b</m> by drawing a 
+    circle of radius <m>c</m> around the center (this circle will therefore pass through 
+    <m>F_1</m> and <m>F_2</m>). The perpendicular line through one of the vertices, say 
+    the one with coordinates <m>(a,0)</m> on the right, will intersect this circle at 
+    the points <m>(a,b)</m> and <m>(a,-b)</m> (similarly, the the perpendicular line 
+    through the other vertex will yield the two points <m>(-a,b)</m> and <m>(-a,-b)</m> 
+    of intersection with this circle). Now draw the two lines passing through the center 
+    (i.e., the origin <m>(0,0)</m> here) and one of these points of intersection we just 
+    constructed here (they are the two black dash-diotted lines in the above picture): 
+    Can you figure out what their significance is?
+  </p>
+
+  <p>
+    Let us look at a geometrical definition of the hyperbola: Attach a point <m>P</m> 
+    to the ellipse, and measure the distances <m>F_1P</m> and <m>F_2P</m>. Observe that 
+    as you move <m>P</m> around the ellipse, the <em>difference</em> of the two distances 
+    is constant. How is this difference related to the length <m>a</m>?
+  </p>
+
+  <definition xml:id="def-hyperbola1">
+    <p>A <term>hyperbola</term> is the locus of those points of the plane whose difference 
+    of distances to two fixed points <m>F_1</m> and <m>F_2</m> (the two <term>foci</term> 
+    of the hyperbola) is constant.</p>
+  </definition>  
+
+	<image source="hyperbola2.png"/>
+               
+	<p>
+		The <term>eccentricity</term> <m>e</m> of the hyperbola is given by <m>\frac{c}{a}</m>, 
+    i.e., the ratio of the linear eccentricity to the semi-major axis. Since <m>c\gt a</m> 
+    for a hyperbola, we have that the eccentricity is <m>e\gt 1</m> for any hyperbola. 
+    One can now proceed <mdash/> as we did for ellipses <mdash/> and construct a 
+    <term>directrix</term> for (each branch of) the hyperbola, and thus obtain a second 
+    geometrical definition of the hyperbola. However, we will skip this construction here. 
+	</p>
+
+	<p>
+		Instead we will look at the definition of the hyperbola as an <em>equidistant set</em>. 
+    To this end, construct a circle around a vertex passing through its nearest focus, 
+    say <m>F_1</m>. Intersecting this circle with the major axis (i.e., the <m>x</m>-axis here) 
+    will give two points, namely, the focus <m>F_1</m> itself and a point we call <m>D</m> here. 
+    Now find the circle around the other focus <m>F_2</m> passing through the point <m>D</m> 
+    (note that the other focus <m>F_1</m> is outside this circle), and check that the circle 
+    around <m>P</m> passing through <m>F_1</m> will always touch the previous circle in 
+    exactly one point (called <m>I</m> in the next picture) no matter where <m>P</m> is 
+    located on (the branch closest to <m>F_1</m> of) the hyperbola. We thus have arrived 
+    at another geometrical definition of the hyperbola that you should be able to complete 
+    by yourself now. 
+	</p>
+
+  <definition xml:id="def-hyperbola3">
+    <p>A branch of the <term>hyperbola</term> is the <term>equidistant set</term> 
+      (or <term>midset</term>) to <m>\ldots</m></p>
+  </definition>  
+
+
+	<image source="hyperbola3.png"/>
+
+	<p>
+		We now only consider the hyperbola with the two foci <m>F_1</m> and <m>F_2</m> 
+    together with a point <m>P</m> on one of the branches of the hyperbola. Construct 
+    the tangent <m>t</m> to the hyperbola at <m>P</m>. We could again measure angles now 
+    (and would get similar results as before for the parabola and the ellipse), but let us 
+    look at something else here: the perpendicular line to the tangent through the point 
+    <m>P</m> is called the <term>normal</term>. Get a slider with non-negative numbers, e.g., 
+    on the interval from <m>0</m> to <m>10</m> (or <m>15</m>). Use the number from the slider, 
+    call it <m>r</m>, as radius of a circle around <m>P</m>, and find the points of intersection 
+    of this circle and the normal. In the following picture, these points of intersection are 
+    called <m>S</m> and <m>T</m>.
+	</p>
+
+	<image source="hyperbola4.png"/>
+
+	<p>
+		Using <m>S</m> and <m>T</m>, we can now draw curves that are <term>parallel</term> to a 
+    branch of the hyperbola: Set your radius <m>r</m> to a certain value, then turn the 
+    "Trace on" for the point <m>S</m> and/or <m>T</m>, and slowly move <m>P</m> along the 
+    branch of the hyperbola. The points you trace out here, all have distance <m>r</m> 
+    from the branch of the hyperbola and thus are on parallel curves to that branch. If 
+    you do this carefully for different values of <m>r</m>, you will get a picture as below: 
+    To the outside of the branch of the hyperbola, you get the (green) curves that you 
+    should have expected, however, on the inside something more exciting is happening! 
+    From a certain value of <m>r</m> onwards, the curves we are getting have "kinks". 
+    Draw a couple of curves for different values of <m>r</m> <mdash/> make a screenshot 
+    of your favorite picture you got here!
+	</p>
+
+	<image source="hyperbola5.png"/>
+
+
+	<p>
+		Let us now return to a construction we also did for the parabola, namely, finding 
+    the <term>evolute</term> of (a branch of) the hyperbola. So, find the osculating 
+    circle to the hyperbola at the point <m>P</m>. Then find the midpoint <m>M</m> of 
+    that osculating circle. And finally "trace" out the curve this center <m>M</m> 
+    moves about as you move the <m>P</m> along the (branch of the) hyperbola. This is 
+    the <term>evolute</term>. Does the curve you are getting here look familiar? 
+	</p>
+
+	<image source="hyperbola6.png"/>
+
 
 </section>

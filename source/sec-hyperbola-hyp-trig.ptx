@@ -3,6 +3,200 @@
 <section xml:id="sec-hyperbola-hyp-trig" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Hyperbolic Trig Functions</title>
 
-  <p> Text of section. </p>
+  <p>
+    We are all familiar with the trigonometric functions cosine, sine and tangent 
+    (to name the most prominent ones). There are also sometimes called 
+    <em>circular functions</em> because they can be defined on the unit circle. 
+    Besides these there is another "family" of functions called the 
+    <term>hyperbolic trigonometric functions</term>. In this section, we will explore 
+    these and contrast their properties to the usual trigonometric functions (we will 
+    call them <em>circular</em> trigonometric functions in the following to distinguish 
+    them from the <em>hyperbolic</em> trigonometric functions).
+  </p>
+
+  <p>
+    Let us start by looking at the graphs of the circular trigonometric functions.
+    <sage>
+      <input>
+      cosgraph = plot(cos(x),(x,-2.2*pi,2.2*pi),color="purple",thickness=2,aspect_ratio=1,legend_label="cos")
+			singraph = plot(sin(x),(x,-2.2*pi,2*pi),color="darkgreen",thickness=2, linestyle=":",legend_label="sin")
+			tangraph = plot(tan(x),(x,-2.2*pi,2.2*pi),color="red",thickness=2, linestyle="-.",detect_poles=True,ymax=3,ymin=-3,aspect_ratio=1,legend_label="tan")
+			cosgraph+singraph+tangraph
+      </input>
+    </sage>
+    The <em>hyperbolic trigonometric functions</em> we would like to consider here are
+    <ul>
+      <li> the <term>hyperbolic cosine</term> denoted <code>cosh(x)</code>,</li>
+      <li> the <term>hyperbolic sine</term> denoted <code>sinh(x)</code>, and</li>
+      <li> the <term>hyperbolic tangent</term> denoted <code>tanh(x)</code>.</li>
+    </ul>
+    Plot them in <em>SageMath</em>.
+  </p>
+
+  <p>
+    You should see that they look quite differently from the circular trigonometric functions. 
+    In particular, the hyperbolic tangent seems to have horizontal asymptotes as 
+    <m>x\to\pm\infty</m>. We can check that this is indeed the case by calculating 
+    <m>\lim\limits_{x\to\infty} \tanh(x)</m>. In <em>SageMath</em> we can calculate 
+    this limit as follows:
+    <sage>
+      <input>
+      limit(tanh(x), x=+oo)
+      </input>
+      <output>
+      1
+      </output>
+    </sage>
+    Again, you should now calculate <m>\lim\limits_{x\to-\infty} \tanh(x)</m> in 
+    SageMath. Also calculate <m>\lim\limits_{x\to+\infty} \cosh(x)</m>, 
+    <m>\lim\limits_{x\to-\infty} \cosh(x)</m>, <m>\lim\limits_{x\to+\infty} \sinh(x)</m> 
+    and <m>\lim\limits_{x\to-\infty} \sinh(x)</m> (do you get what you expect?). 
+    What do you get if you replace the hyperbolic trigonometric functions with the 
+    circular trigonometric functions cosine, sine and tangent? Does this make sense? 
+    </p>
+
+
+    <p>
+      In calculus, you calculate derivatives of the circular trigonometric functions, 
+      e.g.<fn xml:id="tangent-derivative">Hopefully <em>SageMath</em> gives you the 
+      expression <m>\tan^2(x)+1</m> here and not the far more useless expression 
+      involving the secant function that CXC/CAPE seems to love having you memorize!</fn>, 
+      <sage>
+        <input>
+        diff(tan(x),x)
+        </input>
+        <output>
+        (tan(x))^2+1
+        </output>
+      </sage>
+      Use <em>SageMath</em> to calculate the derivatives of the hyperbolic trigonometric 
+      functions, and make a table comparing the circular trigonometric functions and their 
+      derivatives with the hyperbolic trigonometric functions and their derivatives. From 
+      this table <mdash/> and the <em>Fundamental Theorem of Calculus</em> <mdash/> it is 
+      immediate what the integrals/anti-derivatives of the (hyperbolic or not) sine and 
+      cosine are (namely?). For the tangent, we get
+      <sage>
+        <input>
+        integrate(tan(x),x).full_simplify()
+        </input>
+        <output>
+        -log(cos(x))
+        </output>
+      </sage>
+      as anit-derivative <mdash/> note that this expression is missing a 
+      <em>constant of integration</em> that you should always include in your work, 
+      and that <m>\log</m> here denotes the <em>natural logarithm</em> that you usually 
+      might write as <m>\ln</m>. We have included a <code>full_simplify()</code> in the 
+      above command to force <em>SageMath</em> to <em>not(!)</em> use the secant. What is 
+      an anti-derivative of the hyperbolic tangent?  
+    </p>
+
+    <p>
+      Let us now turn our attention to definitions: For the tangent we have 
+      <m>\tan(x)=\frac{\sin(x)}{\cos(x)}</m>. For the hyperbolic tangent we 
+      similarly have <m>\tanh(x)=\frac{\sinh(x)}{\cosh(x)}</m>, which we can 
+      confirm in the following plot:
+      <sage>
+        <input>
+	      plot(sinh(x)/cosh(x),(x,-3,3),thickness=5,color="orange")+plot(tanh(x),(x,-3,3),thickness=3,color="blue",linestyle=":")
+	      </input>
+	    </sage>
+	    This leaves us with the definitions of the hyperbolic cosine and sine.
+	  </p>
+
+	  <p>
+	    Let us begin by looking at the following parametric plot: 
+        <sage>
+          <input>
+          t = var('t')
+	        parametric_plot((cos(t),sin(t)),(t,0,2*pi),aspect_ratio=1)
+	        </input>
+	      </sage>
+	    This shows us that 
+	    <me> t \mapsto \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix} </me>
+	    is a <em>parametrization</em> of the <em>unit circle</em> <m>x^2+y^2=1</m>. 
+      Thus the coordinates of any point on the circle can be expressed as 
+      <m>(\cos(t),\sin(t))</m> for some value of <m>t\in[0,2*\pi)</m>.
+	  </p>
+
+	  <p>
+	    In the introduction to this project, we mentioned that <m>\alpha x^2-\beta y^2=1</m> 
+      for some positive parameters <m>\alpha, \beta\gt 0</m> describe hyperbolas. Let us 
+      consider the function <m>f(x,y) = x^2 - y^2</m> now, and make a 
+      <code>contour_plot</code> of this function (you might want to consult the handout 
+      "Plotting in Sage - Part 2/Advanced Plotting in Sage" again for this). Add an 
+      <code>implicit_plot</code> to this contour plot that highlights the level set 
+      with equation <m>x^2-y^2=1</m>; this is the <em>unit hyperbola</em>. Finally, 
+      make a parametric plot similar to the one above, but with cosine and sine 
+      replaced by their hyperbolic counterparts (and choose the values for <m>t</m> 
+      carefully). 
+	  </p>
+
+	  <p>
+	    You should see that 
+	    <me> t \mapsto \begin{pmatrix} \cosh(t) \\ \sinh(t) \end{pmatrix}, \qquad t\in\mathbb{R} </me>
+	    is a <em>parametrization</em> of the <em>unit hyperbola</em> 
+      (more precisely, part of it, namely which one?). Now there are many 
+      parametrizations of both the unit circle as well as the unit hyperbola, 
+      so what makes this one special? E.g., here is another parametrization of the unit circle:
+      <sage>
+        <input>
+	      t = var('t')
+				parametric_plot(((1-t^2)/(1+t^2),2*t/(1+t^2)),(t,-10,10),aspect_ratio=1)
+	      </input>
+	    </sage>
+	    That is, 
+	    <me> t \mapsto \begin{pmatrix} \frac{1-t^2}{1+t^2} \\ \frac{2t}{1+t^2} \end{pmatrix}, \qquad t\in\mathbb{R} </me>
+	    also yields the unit circle (this parametrization turns out to be useful 
+      when one integrates functions containing trigonometric functions). The 
+      property that makes the parametrization
+	    <me> t \mapsto \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix}, \qquad t\in[0,2\pi) </me>
+	    useful is that there is an immediate interpretation of the parameter <m>t</m> in this case:
+	    <ul>
+	      <li>it is the angle at the origin measured in radians, or, alternatively, </li>
+	      <li>it is the length of the circular arc on the unit circle from the point 
+        <m>(1,0)</m> to <m>(\cos(t),\sin(t))</m> in counter-clockwise direction.</li>
+	    </ul>
+	    As a result, the trigonometric functions can all be defined on the unit circle.
+	  </p>
+
+		<image source="trig_unit1.png"/>
+		<!-- <image width="45%" source="images/trig_unit2.png"/> -->
+
+		<p>
+			Instead of an angle (or arc length), the parameterization for the hyperbolic 
+      functions is related to an <em>area</em>. To motivate this, let us have a look 
+      at the unit circle again: The circular sector between the <m>x</m>-axis and the 
+      segment connecting the origin with the point <m>(\cos(\alpha),\sin(\alpha))</m> 
+      on the circle has area <m>\frac12\alpha</m>.
+		</p>
+
+		<image source="unitcircle.png"/>
+
+		<p>
+			Now let us look at the similar area on the unit hyperbola:
+		</p>
+
+		<image source="unithyperbola.png"/>
+
+		<p>
+		  What is the area of the shaded region here? This area is bounded by the straight 
+      line from the origin to the point <m>(\cosh(x),\sinh(x))</m> (for a fixed value of 
+      <m>x</m>) on the hyperbola, the <m>x</m>-axis and the unit hyperbola <m>x^2-y^2=1</m> 
+      (what do you get if you make <m>y</m> the subject?). Calculate this area in 
+      <em>SageMath</em>, and confirm that its value is <m>\frac12\,x</m> for your 
+      chosen value of <m>x</m>.
+		</p>
+
+		<p> 
+			In fact, it turns out that the hyperbolic cosine and sine can be expressed 
+      using the exponential function as
+			<me> \cosh(x) = \frac{e^x+e^{-x}}{2} \quad\text{and}\quad \sinh(x) = \frac{e^x-e^{-x}}{2} .
+			</me>
+			You should be familiar with corresponding formulae for the (circular) cosine and sine 
+      from <em>Euler's formula</em> which one uses in <em>de Moivre's formula</em> <mdash/> state them.
+		</p>
+
+
 
 </section>

@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-hyperbola-astronomy" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Hyperbola in Astronomy</title>
+  <title>Interstellar Visitor</title>
 
-  <p> Text of section. </p>
+  <p>
+    On 19 October 2017, the <url href="https://en.wikipedia.org/wiki/Pan-STARRS">Pan-STARRS</url> 
+    1 telescope in Hawai`i picked up a faint point of light moving across the sky. Initially thought 
+    to be a comet, it was reclassified as an asteroid a week later <mdash /> and astronomers got more 
+    and more exciting about this object. The <url href="https://www.iau.org/">International Astronomical 
+    Union</url> even introduced a new designation, "<em>I</em>", for this astronomical object. 
+    Read about it in the following articles:
+    <ul>
+      <li><url href="https://www.space.com/38580-interstellar-object-spotted-comet-asteroid-mystery.html">Visitor from Far, Far Away: Interstellar Object Spotted in Our Solar System</url> (<em>26 October 2017</em>)</li>
+      <li><url href="https://www.jpl.nasa.gov/news/news.php?feature=6983">Small Asteroid or Comet 'Visits' from Beyond the Solar System</url> (<em>26 October 2017</em>)</li>
+      <li><url href="https://www.space.com/38798-first-interstellar-object-name-oumuamua.html">Meet 'Oumuamua! The 1st Interstellar Visitor Ever Seen Gets a Name</url> (<em>15 November 2017</em>)</li>
+      <li><url href="http://www.eso.org/public/news/eso1737/">ESO Observations Show First Interstellar Asteroid is Like Nothing Seen Before</url> (<em>20 November 2017</em>)</li>
+      <li><url href="https://www.jpl.nasa.gov/news/news.php?feature=7006">Solar System's First Interstellar Visitor Dazzles Scientists</url> (<em>20 November 2017</em>)</li>            
+      <li><url href="https://www.theguardian.com/science/across-the-universe/2017/nov/20/interstellar-object-confirmed-to-be-from-another-solar-system">Mysterious object confirmed to be from another solar system</url> (<em>20 November 2017</em>)</li>
+    </ul>
+    There is also a <url href="https://www.youtube.com/watch?v=fbL1ZoAQgUU">YouTube video</url> in which some NASA scientists comment on this discovery.  
+  </p>
+
+  <p>
+    Read (some) of the above articles and summarize in a short paragraph how the scientists know that the observed asteriod is an interstellar object.
+  </p>
 
 </section>
