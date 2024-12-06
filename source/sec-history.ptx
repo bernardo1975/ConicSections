@@ -3,6 +3,19 @@
 <section xml:id="sec-history" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>History</title>
 
-  <p> Text of section. </p>
+  <p> <url href="https://en.wikipedia.org/wiki/Apollonius_of_Perga">Apollonius of Perga</url> 
+    (c. 262 BC <mdash /> c. 190 BC), a Greek geometer and astronomer, wrote eight books on 
+    <em>Conics</em>, influencing many later scholars. Beginning from the theories of 
+    <url href="https://en.wikipedia.org/wiki/Euclid">Euclid</url> and 
+    <url href="https://en.wikipedia.org/wiki/Archimedes">Archimedes</url> on the topic, 
+    he brought them to the state they were in just before the invention of 
+    <term>analytic geometry</term><fn xml:id="footnote-ana-geo">In classical mathematics, 
+    <em>analytic geometry</em>, also known as <em>coordinate geometry</em>, is the study 
+    of geometry using a coordinate system and analytical methods (functions, derivatives, etc.). 
+    Analytic geometry was independently invented by 
+    <url href="https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes">René Descartes</url> and 
+    <url href="https://en.wikipedia.org/wiki/Pierre_de_Fermat">Pierre de Fermat</url> around 
+    1637,although Descartes is sometimes given sole credit.</fn>. His definitions of the terms 
+    <em>ellipse</em>, <em>parabola</em>, and <em>hyperbola</em> are the ones in use today.</p>
 
 </section>

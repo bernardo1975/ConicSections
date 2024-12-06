@@ -41,7 +41,7 @@
         and <me>\alpha x^2=y</me> which describes a parabola, for some 
         positive constants <m>\alpha</m> and <m>\beta</m>. While this 
         classification with respect to quadratic equations is useful, 
-        there other <mdash /> more geometrical <mdash /> ways to describe 
+        there are other <mdash /> geometrical <mdash /> ways to describe 
         these curves.
 	</p>
 
@@ -50,7 +50,7 @@
         using GeoGebra. We are interested in their geometrical properties, 
         properties they share and that distinguish them from each other. 
         We will then explore their applications in physics, astronomy and 
-        other technical fields using Python and SageMath.
+        other technical fields using SageMath/Python.
 	</p> 
 
 </section>

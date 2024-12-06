@@ -3,6 +3,23 @@
 <section xml:id="sec-geogebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>GeoGebra</title>
 
-  <p> Text of section. </p>
+    <p> 
+	    You find the conic sections in the following tool menu in GeoGebra (the seventh from the left):
+    </p>
+				
+	<image width="10%" valign="middle" source="GGconicsections.png"/>
+
+	<p>
+		There are four conic section tools under this menu: One for each of the conic sections 
+        <em>ellips</em>, <em>parabola</em> and <em>hyperbola</em>, and a general tool called 
+        <em>conic through 5 points</em>. The last one is the actual icon for GeoGebra!
+	</p>
+
+	<image width="10%" valign="middle" source="GGconic5points.png"/>
+
+	<p>
+	    <em>Circles</em> are special case of conic sections. The tools dealing with circles 
+        can be found in the tool menu to the left of conic sections.
+	</p>
 
 </section>
