@@ -156,7 +156,7 @@
 	    You should see that 
 	    <me> t \mapsto \begin{pmatrix} \cosh(t) \\ \sinh(t) \end{pmatrix}, \qquad t\in\mathbb{R} </me>
 	    is a <em>parametrization</em> of the <em>unit hyperbola</em> 
-      (more precisely, only part of it &ndash; which one?). Now there are many 
+      (more precisely, only part of it &#x2014; which one?). Now there are many 
       parametrizations of both the unit circle as well as the unit hyperbola, 
       so what makes this one special? E.g., here is another parametrization of the unit circle:
       <sage>
