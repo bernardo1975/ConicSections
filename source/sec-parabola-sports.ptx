@@ -17,18 +17,20 @@
         object (or <em>projectile</em>) that moves along the path under the 
         action of gravity only; the influence of friction, air drag or other 
         aerodynamical influences is not considered (although they, in reality, 
-        play a significant role).  
+        play a significant role <mdash /> as we have seen in 
+        <em>Digression 4: Throwing a Ball</em>).  
     </p>
 
     <p> 
-        Let the projectile be launched from the height <m>b</m> with an initial 
+        The following situation should sound familiar from what we have done 
+        during the semester: We launch the projectile from the height <m>b</m> with an initial 
         velocity <m>v_0</m> at a launch angle <m>\alpha</m>. The horizontal and 
         vertical components of the initial velocity are then <m>v_0\,\cos(\alpha)</m> 
         and <m>v_0\,\sin(\alpha)</m>. There is only an acceleration in the vertical 
         direction, downwards, due to gravity, given by <m>-g</m> where <m>g</m> is the 
-        acceleration due to gravity given by the value 
-        <m>9.81 \frac{\text{m}}{\text{s}^2}</m> on the surface of the earth 
-        (the minus sign signifies that the acceleration is downward). Since the 
+        acceleration due to gravity on the surface of the earth (given by the value 
+        <m>9.81 \frac{\text{m}}{\text{s}^2}</m>). The minus sign in <m>-g</m> signifies that the 
+        acceleration is downwards (towards the center of the Earth). Since the 
         acceleration is the time derivative of the velocity, integration yields 
         that horizontal velocity remains unchanged at <m>v_0\,\cos(\alpha)</m>, 
         while the vertical velocity changes linearly as time progresses according 
@@ -46,7 +48,7 @@
     </p>
 
     <p>
-        Let us explore this projectile motion now in Python/SageMath: Define a function 
+        Let us explore this projectile motion now in Python/SageMath: We define a function 
         <code>f</code> that has arguments <code>v0</code>, <code>alpha</code> and <code>t</code> 
         as well as <code>b</code> (the last one with a default value of <code>0</code>). 
         It should return the tuple <code>(x,y)</code>, i.e., the <m>x</m>- and 
@@ -57,34 +59,40 @@
     </p>
 
     <p>
-        You can now explore the motion of your projectile for different values of 
+        We can now explore the motion of your projectile for different values of 
         <code>v0</code> and <code>alpha</code> (we let <code>b=0</code> for the moment). 
         You can plot the path your projectile will take by using a <code>parametric_plot</code>. 
-        Fix a value of <m>v_0</m> and then by varying the value of <m>\alpha</m> find the angle 
-        where you obtain the maximal horizontal range (i.e., the value of $x(t)$ where $y(t)=0$, 
-        i.e., where the projectile returned to the <m>x</m>-axis). 
+        We fix a value of <m>v_0</m> and then by varying the value of <m>\alpha</m> find the angle 
+        where we obtain the maximal horizontal range (i.e., we find the value of $x(t)$ where we 
+        have $y(t)=0$, i.e., where the projectile returned to the <m>x</m>-axis). 
     </p>
 
     <p> 
-        As a hint: If you coded your function correctly, the code (all in one line!)
-        <pre>
+        <sage>
+            <input>
+            g = 9.81
+            def f(t,v0,alpha,b=0):
+                return (v0*cos(pi*alpha/180)*t, v0*sin(pi*alpha/180)*t - g*t^2/2 + b)
+
             show(sum([parametric_plot(f(x,10,5*i),(x,0,2),ymin=0,
                 aspect_ratio=1,color=hue(i/20),
                 legend_label=("%d degrees" % (5*i))) for i in 
                 range(18,-1,-1)]),xmax=11,figsize=10)
-        </pre>
-        should give the picture below showing the parabolic paths of projectiles 
+            </input>
+        <sage>
+        The picture above shows the parabolic paths of projectiles 
         with the same initial velocity <code>v0=10</code> but different angles 
-        (in steps of <m>5^{\circ}</m>).
+        (in steps of <m>5^{\circ}</m>). What distance do you get for which 
+        throwing angle <m>\alpha</m>?
     </p>
 
-	<image source="projectile1.png"/>
-
 	<p>
-		You should see for a projectile to hit the ground (i.e., <m>y=0</m>) 
+		You should see that for a projectile to hit the ground (i.e., <m>y=0</m>) 
         at a certain distance, you either have none, one or 
         two<fn xml:id="artillery">In military science, the two possibilites are 
-        called <em>direct fire</em> and <em>plunging fire</em>.</fn> angles for a 
+        called <em>direct fire</em> and <em>plunging fire</em>. In many of the (early) 
+        <a href="https://en.wikipedia.org/wiki/Artillery_game">Artillery-style computer games</a> 
+        the player(s) had to use plunging fire to be vitorious.</fn> angles for a 
         given initial velocity (there is only one angle to achieve the maximal distance).   
 	</p>
 
@@ -94,22 +102,32 @@
 	    and then plug this into the formula for <m>y</m> to obtain
 		<me> y = - \frac{g}{2\,v_0^2\,\cos^2(\alpha)}\,x^2+\tan(\alpha)\,x+b.</me>
 		Clearly, the right-hand side is a quadratic polynomial in <m>x</m>, 
-        and therefore the function <m>y</m> (now a function of <m>x</m>) is 
+        and therefore the function <m>y</m> (now a function of <m>x</m> instead of <m>t</m>) is 
         therefore indeed a parabola. So, alternatively to the above 
         <code>parametric_plot</code>, you can also do a normal <code>plot</code> 
-        using this function <mdash/> with the same result (do this).
+        using this function <mdash/> with the same result.
+        <sage>
+            <input>
+            g = 9.81
+            def f(x,v0,alpha,b=0):
+                return - g/(2*v0^2*cos(pi*alpha/180)^2)*x^2+tan(pi*alpha/180)*x+b
+
+            show(sum([plot(f(x,10,5*i),(x,0,11),ymin=0,
+                aspect_ratio=1,color=hue(i/20),
+                legend_label=("%d degrees" % (5*i))) for i in 
+                range(17,-1,-1)]),ymin=0,figsize=10)           
+            </input>
+        <sage>
 	</p>
 
 	<p>
 		Furthermore, we can now easily calculate the <term>horizontal range</term>, 
         i.e., the value of <m>x</m> (greater than <m>0</m>) where the projectile 
-        returned to the <m>x</m>-axis (that is, has value <m>y=0</m>): 
+        returned to the <m>x</m>-axis (that is, where we have <m>y=0</m>): 
         This is amounts to solving the quadratic equation 
 		<me> 0 = - \frac{g}{2\,v_0^2\,\cos^2(\alpha)}\,x^2+\tan(\alpha)\,x+b.</me>
-		for <m>x</m> and only considering the positive, larger, root. Remember 
-        that we have done something like this before? Find that code and 
-        modify it, so you can use it in this problem (i.e., for values <m>v_0</m>, 
-        <m>\alpha</m> and <m>b</m>, find the horizontal range).
+		for <m>x</m> and only considering the positive <mdash/> larger <mdash/> root. Remember 
+        that we have done something like this in one of the quizzes? 
 	</p>
 
 	<p>
@@ -120,7 +138,7 @@
 		and thus we obtain the maximal horizontal range <m>\frac{v_0^2}{g}</m> 
         for the angle <m>\alpha=45^{\circ}</m>. Note that the initial velocity 
         <m>v_0</m> enters quadratically in this maximal range <mdash/> this is 
-        the reason why athletes practice that much to achieve their maximal 
+        the reason why athletes practice so much to achieve their maximal 
         "push" at the moment they are realeasing the object they are throwing!
 	</p>
 
@@ -142,7 +160,7 @@
 	<p>
 		Let us explore these formulae:
 		<ul>
-			<li>Check that for some value <m>b\gt 0</m> the optimal angle 
+			<li>Check that for a fixed value <m>b\gt 0</m> the optimal angle 
             <m>\alpha_{\max}</m> is an increasing function in <m>v_0</m>, 
             but also less than <m>45^{\circ}</m> with 
             <m>\lim\limits_{v_0\to+\infty} \alpha_{\max} = 45^{\circ}</m> 
@@ -167,7 +185,7 @@
 	</p>  
 
 	<table xml:id="table-sports">
-        <caption>Measured parameters for different sports</caption>
+        <caption halign="center">Measured parameters for different sports</caption>
         <tabular top="minor" halign="center">
             <row bottom="major">
                 <cell>Sport</cell>
