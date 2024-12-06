@@ -8,6 +8,8 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+  <xi:include href="sec-hyperbola-geogebra.ptx" />
+  <xi:include href="sec-hyperbola-astronomy.ptx" />
+  <xi:include href="sec-hyperbola-hyp-trig.ptx" />
 
 </chapter>
