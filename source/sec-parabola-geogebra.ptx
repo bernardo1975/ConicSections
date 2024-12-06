@@ -3,12 +3,15 @@
 <section xml:id="sec-parabola-geogebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Parabola in GeoGebra</title>
 
+    <subsection xml:id="subsec-parabola-geogebra-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Drawing a Parabola</title>
     <p>
         In GeoGebra, we construct a parabola by choosing a point, called the <term>focus</term>, 
         together with a line, the <term>directrix</term>. Among other things, we will discuss 
         the significance of these two objects here, but let us first construct a parabola: 
         While you can choose any point and line (no matter of what slope), it might be useful 
-        to choose a point <m>F</m> on the <m>y</m>-axis as focus and the <m>x</m>-axis as directrix.
+        to choose a point <m>F</m> on the <m>y</m>-axis as focus and the <m>x</m>-axis as directrix. 
+        So, please, construct these in GeoGebra and then use the parabola tool to draw the parabola.
     </p>
 
 	<image source="parabola1.png"/>
@@ -17,9 +20,12 @@
 		We first explore how this construction and the quadratic equation <m>y=\alpha x^2+c</m> 
         with some parameters <m>\alpha</m> and <m>c</m> are related: Check that the vertex 
         (i.e., the extremal point, thus the minimum or maximum) of the parabola is given by 
-        the midpoint between the origin and the focus <m>F</m>. Can you express the constant 
-        <m>c</m> in terms of <m>y</m>-coordinate of <m>F</m>? Can you also express the parameter 
-        <m>\alpha</m> in terms of <m>y</m>-coordinate of <m>F</m>?
+        the midpoint between the origin and the focus <m>F</m>. Then by looking at the equation 
+        of the parabola (and possibly changing in which for this equation is displayed by going 
+        to Settings > Algebra for the parabola) answer the following questions: Can you express 
+        the constant <m>c</m> in terms of <m>y</m>-coordinate of <m>F</m>? 
+        Can you also express the parameter <m>\alpha</m> in terms of that same <m>y</m>-coordinate 
+        of <m>F</m>?
 	</p>
 
 	<p>
@@ -28,7 +34,10 @@
         from the location of <m>F</m> in relation to the directrix. However, we can make 
         the geometrical relation between focus, directrix and parabola even more concrete.
 	</p> 
+    </subsection>
 
+    <subsection xml:id="subsec-parabola-geogebra-property" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>A Defining Property of a Parabola</title>
 	<p>
 		We have just seen that the vertex of the parabola has the property that it has its 
         distance to the focus <m>F</m> is the same as its distance to the directrix. We now 
@@ -62,10 +71,13 @@
         the plane have the same distance to <m>A</m> as they have to the line? The answer 
         is: All points of the parabola that has <m>A</m> as focus and the line as its directrix.
     </p>
+    </subsection>
 
+    <subsection xml:id="subsec-parabola-geogebra-uniqueness" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>There is only one Parabola (up to similarity)</title>
     <p>
         How different are parabolas from each other? Maybe you remember the following 
-        SageMath code where we plotted a regular parabola and a skinny one:
+        SageMath code where we plotted a regular parabola and a skinny one in <em>SageMath Lecture 2</em>:
 
         <sage>
             <input>
@@ -92,7 +104,10 @@
 		So, all parabolas are <em>similar</em> to each other <mdash /> 
         they all have the <em>same shape</em>!
     </p>  
+    </subsection>
 
+     <subsection xml:id="subsec-parabola-geogebra-application" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>A Property with many Applications</title>
     <p>
         We now consider the original parabola with focus <m>F</m> and point 
         <m>P</m> on it again. Find the tangent <m>t</m> to the parabola at 
@@ -120,13 +135,16 @@
         located at the focus <m>F</m> and when turned on, parallel <mdash/> and thus bundled 
         <mdash/> rays of light leave the parabolic reflector.
 	</p>
+    </subsection>
 
+     <subsection xml:id="subsec-parabola-geogebra-evolute" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Osculating Circles &amp; Evolute</title>
 	<p>
 		Finally, we have some fun with the osculating circle. Find the 
         <em>osculating circle</em> to the parabola at the point <m>P</m> 
-        (you can either go through the construction we did earlier in the semester, 
+        (you can either go through the construction we did during the semester, 
         or there is also a convenient GeoGebra command that will draw the it). Also 
-        find the the center <m>M</m> of the osculating circle. By construction, line 
+        find the the center <m>M</m> of the osculating circle. By construction, the line 
         passing through <m>M</m> and <m>P</m> is the <em>normal</em> to the parabola at 
         <m>P</m>, i.e., the line perpendicular to the tangent <m>t</m> to the parabola at 
         <m>P</m>. 
@@ -167,5 +185,14 @@
             <term>evolute</term> of the given curve.
 		</p>
 	</definition>
+
+    <p>
+        Our construction above confirms an observation we made during the semester 
+        for other curves: <em>An evolute is the envelope<fn xml:id="footnote-envelope">An 
+        <term>envelope</term> of a (planar) 
+        family of curves is a curve that is tangent to each member of the family at some point, and 
+        these points of tangency together form the whole envelope.</fn> of the normals to a curve.</em> 
+    </p>
+    </subsection>
 
 </section>
