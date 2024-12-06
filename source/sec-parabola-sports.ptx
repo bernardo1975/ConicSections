@@ -79,7 +79,7 @@
                 legend_label=("%d degrees" % (5*i))) for i in 
                 range(18,-1,-1)]),xmax=11,figsize=10)
             </input>
-        <sage>
+        </sage>
         The picture above shows the parabolic paths of projectiles 
         with the same initial velocity <code>v0=10</code> but different angles 
         (in steps of <m>5^{\circ}</m>). What distance do you get for which 
@@ -117,7 +117,7 @@
                 legend_label=("%d degrees" % (5*i))) for i in 
                 range(17,-1,-1)]),ymin=0,figsize=10)           
             </input>
-        <sage>
+        </sage>
 	</p>
 
 	<p>
