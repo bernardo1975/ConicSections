@@ -143,20 +143,31 @@
 	    In the introduction to this project, we mentioned that <m>\alpha x^2-\beta y^2=1</m> 
       for some positive parameters <m>\alpha, \beta\gt 0</m> describe hyperbolas. Let us 
       consider the function <m>f(x,y) = x^2 - y^2</m> now, and make a 
-      <code>contour_plot</code> of this function (you might want to consult the handout 
-      "SageMath Lecture 2: Plotting in Sage" again for this). Add an 
+      <code>contour_plot</code> of this function (you might want to consult the  
+      "SageMath Lecture 2: Plotting in SageMath" again for this). Add an 
       <code>implicit_plot</code> to this contour plot that highlights the level set 
       with equation <m>x^2-y^2=1</m>; this is the <em>unit hyperbola</em>. Finally, 
       make a parametric plot similar to the one above, but with cosine and sine 
       replaced by their hyperbolic counterparts (and choose the values for <m>t</m> 
       carefully). 
 	  </p>
+    
+    <sage>
+      <input>
+      t, x, y = var('t, x, y')
+      f(x,y) = x^2-y^2
+      p1 = contour_plot(f(x,y), (x,-3,3),(y,-3,3),cmap="tab20c", fill=False)
+      p2 = implicit_plot(f(x,y)==1,(x,-3,3), (y,-3.2,3.2), color="grey", linewidth=6,linestyle=":")
+      p3 = parametric_plot((cosh(t),sinh(t)),(t,-1.8,1.8), xmax=3, color="black", thickness=3, linestyle="-")
+      p1 + p2 + p3
+	    </input>
+	  </sage>
 
 	  <p>
 	    You should see that 
 	    <me> t \mapsto \begin{pmatrix} \cosh(t) \\ \sinh(t) \end{pmatrix}, \qquad t\in\mathbb{R} </me>
 	    is a <em>parametrization</em> of the <em>unit hyperbola</em> 
-      (more precisely, only part of it &#x2014; which one?). Now there are many 
+      (more precisely, only part of it <mdash /> the left branch). Now there are many 
       parametrizations of both the unit circle as well as the unit hyperbola, 
       so what makes this one special? E.g., here is another parametrization of the unit circle:
       <sage>
@@ -204,9 +215,21 @@
 		  What is the area of the shaded region here? This area is bounded by the straight 
       line from the origin to the point <m>(\cosh(x),\sinh(x))</m> (for a fixed value of 
       <m>x</m>) on the hyperbola, the <m>x</m>-axis and the unit hyperbola <m>x^2-y^2=1</m> 
-      (what do you get if you make <m>y</m> the subject?). Calculate this area in 
-      <em>SageMath</em>, and confirm that its value is <m>\frac12\,x</m> for your 
-      chosen value of <m>x</m>.
+      (what do you get if you make <m>y</m> the subject?). We calculate this area in 
+      <em>SageMath</em>, and confirm that its value is <m>\frac12\,x</m> (here, by 
+      checking that the straight line <m>y=\frac12x</m> for <m>x\ge 1</m> coincides with 
+      the value of the integral/value associated with the point <m>(\cosh(x),\sinh(x))</m>):
+      <sage>
+        <input>
+        t = var("t")
+
+        assume(cosh(x)-1>0)
+
+        g(x) = integrate(sinh(x)*t/cosh(x), (t,0,1)) + integrate(sinh(x)*t/cosh(x)-sqrt(t^2-1), (t,1,cosh(x)))
+
+        plot(g(x),(x,1,5), thickness=2) + plot(x/2,(x,1,5), linestyle=":", color="black",thickness=3)
+        </input>
+      </sage>
 		</p>
 
 		<p> 
@@ -215,8 +238,23 @@
 			<me> \cosh(x) = \frac{e^x+e^{-x}}{2} \quad\text{and}\quad \sinh(x) = \frac{e^x-e^{-x}}{2} .
 			</me>
 			You might be familiar with corresponding formulae for the (circular) cosine and sine 
-      from <em>Euler's formula</em> which one uses in <em>de Moivre's formula</em> <mdash/> state them.
+      from <em>Euler's formula</em> (which one also uses, e.g., in the 
+      <em>de Moivre's formula</em>), namely, <m>e^{ix} = \cos(x)+i\,\sin(x)</m>. This leads to
+			<me> \cos(x) = \frac{e^{ix}+e^{-ix}}{2} \quad\text{and}\quad \sin(x) = \frac{e^{ix}-e^{-ix}}{2i} .
+			</me>      
 		</p>
+
+    <p>
+      Lastly, we note the following: The (circular) trig functions <m>\sin</m>, <m>\cos</m> and <m>\tan</m> 
+      have an <em>arc</em> length on the unit circle as their argument <mdash/> thus, the 
+      proper<fn xml:id="fn-inverse-trig">With "proper" we want to stress that the notation <m>\sin^{-1}</m>, 
+      <m>\cos^{-1}</m> and <m>\tan^{-1}</m>, respectively, is for many reasons ill-advised. </fn> names of 
+      the inverse trig functions are <m>\arcsin</m>, <m>\arccos</m> and <m>\arctan</m>, respectively.
+      Similarly, the hyperbolic trig functions <m>\sinh</m>, <m>\cosh</m> and <m>\tanh</m> 
+      have an <em>area</em> on the unit hyperbola as their argument <mdash/> thus, the 
+      proper names of the inverse hyperbolic trig functions are <m>\arsinh</m>, <m>\arcosh</m> 
+      and <m>\artanh</m>, respectively, i.e., without an 'c'.
+    </p>
 
 
 

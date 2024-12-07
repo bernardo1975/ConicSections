@@ -3,6 +3,9 @@
 <section xml:id="sec-hyperbola-geogebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Hyperbola in GeoGebra</title>
 
+  <subsection xml:id="subsec-hyperbola-geogebra-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Drawing and Parts of a Hyperbola</title>
+
   <p>
     In GeoGebra, we construct a hyperbola similar to the ellipse, i.e., we first choose 
     two points, called the <term>foci</term> <m>F_1</m> and <m>F_2</m>, together with a 
@@ -42,6 +45,10 @@
     constructed here (they are the two black dash-diotted lines in the above picture): 
     Can you figure out what their significance is?
   </p>
+  </subsection>
+
+  <subsection xml:id="subsec-hyperbola-geogebra-definition" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Definition of a Hyperbola</title>
 
   <p>
     Let us look at a geometrical definition of the hyperbola: Attach a point <m>P</m> 
@@ -89,6 +96,11 @@
 
 	<image source="hyperbola3.png"/>
 
+  </subsection>
+
+  <subsection xml:id="subsec-hyperbola-geogebra-parallel" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Parallel Curves to the Hyperbola</title>
+
 	<p>
 		We now only consider the hyperbola with the two foci <m>F_1</m> and <m>F_2</m> 
     together with a point <m>P</m> on one of the branches of the hyperbola. Construct 
@@ -106,7 +118,8 @@
 
 	<p>
 		Using <m>S</m> and <m>T</m>, we can now draw curves that are <term>parallel</term> to a 
-    branch of the hyperbola: Set your radius <m>r</m> to a certain value, then turn the 
+    branch of the hyperbola <mdash /> yes, we are generalizing the definition of "parallel" here: 
+    Set your radius <m>r</m> to a certain value, then turn the 
     "Trace on" for the point <m>S</m> and/or <m>T</m>, and slowly move <m>P</m> along the 
     branch of the hyperbola. The points you trace out here, all have distance <m>r</m> 
     from the branch of the hyperbola and thus are on parallel curves to that branch. If 
@@ -115,11 +128,19 @@
     should have expected, however, on the inside something more exciting is happening! 
     From a certain value of <m>r</m> onwards, the curves we are getting have "kinks". 
     Draw a couple of curves for different values of <m>r</m> <mdash/> make a screenshot 
-    of your favorite picture you got here!
+    of your favorite picture you got here!<br/>
+    (<b>Note:</b> Unfortunetely, the "trace" functionality in GeoGebra can be a  very 
+    fleeting construction <mdash/> one unintended move, and all the traces are gone! 
+    Thus it might be worth <mdash/> if you have the time <mdash/> to think about and then experiment 
+    with other ways to draw multiple parallel curves together.)
 	</p>
 
 	<image source="hyperbola5.png"/>
 
+  </subsection>
+
+  <subsection xml:id="subsec-hyperbola-geogebra-evolute" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Evolute of a Hyperbola</title>
 
 	<p>
 		Let us now return to a construction we also did for the parabola, namely, finding 
@@ -131,6 +152,7 @@
 	</p>
 
 	<image source="hyperbola6.png"/>
+  </subsection>
 
 
 </section>
