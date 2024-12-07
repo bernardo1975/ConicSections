@@ -252,8 +252,9 @@
       the inverse trig functions are <m>\arcsin</m>, <m>\arccos</m> and <m>\arctan</m>, respectively.
       Similarly, the hyperbolic trig functions <m>\sinh</m>, <m>\cosh</m> and <m>\tanh</m> 
       have an <em>area</em> on the unit hyperbola as their argument <mdash/> thus, the 
-      proper names of the inverse hyperbolic trig functions are <m>\arsinh</m>, <m>\arcosh</m> 
-      and <m>\artanh</m>, respectively, i.e., without an 'c'.
+      proper names of the inverse hyperbolic trig functions are <m>\operatorname{arsinh}</m>, 
+      <m>\operatorname{arcosh}</m> and <m>\operatorname{artanh}</m>, respectively, i.e., not an "arc" but 
+      only an "ar" (short for "area") as initial syllable. 
     </p>
 
 
