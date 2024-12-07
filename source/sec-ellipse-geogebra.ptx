@@ -3,6 +3,8 @@
 <section xml:id="sec-ellipse-geogebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Ellipse in GeoGebra</title>
 
+    <subsection xml:id="subsec-ellipse-geogebra-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Drawing an Ellipse</title>
     <p>
 		In GeoGebra, we construct an ellipse by choosing two points, the two 
         <term>foci</term>, together with a point on the ellipse. Among other things, 
@@ -18,7 +20,7 @@
 	<image source="ellipse1.png"/>
 
 	<p>
-		We now attach a point <m>P</m> on the ellipse that we can control with 
+		We now attach a point <m>P</m> on the ellipse that we can control with an 
         <em>angular slider</em>: First, we find the midpoint between <m>F_1</m> and 
         <m>F_2</m> (it should be origin if you placed the two foci symmetrical 
         around the origin) <mdash/> this point is called the <term>center</term> 
@@ -48,11 +50,16 @@
     </definition>  
 
     <p>
-        This definition immediately yields the following "<term>gardener's method</term>": 
+        This definition immediately yields the following "<term>gardener's method</term>" 
+        (also known as "<term>thumbtack construction</term>"): 
         an ellipse can be constructed using two pins and a string.
     </p>
 
 	<image source="ellipse3.png"/>
+    </subsection>
+
+    <subsection xml:id="subsec-ellipse-geogebra-parts" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>The Parts of an Ellipse</title>
 
 	<p>
 		We need some more vocabulary. Ellipses have two <em>axes of symmetry</em>; 
@@ -101,6 +108,10 @@
     </definition>  
 
 	<image source="ellipse5.png"/>
+    </subsection>
+
+    <subsection xml:id="subsec-ellipse-geogebra-equidistant" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Ellipse as an Equidistant Set</title>
 
 	<p>
 		There is another alternative definition of an ellipse: Consider the ellipse 
@@ -110,7 +121,9 @@
         Denote the intersection point of the ray with this circle by <m>I</m> (be careful, 
         you might get two intersection points <mdash/> we want the one that is on the 
         <em>opposite</em> side as <m>F_1</m> to <m>P</m>). Now, locate the "Locus" tool 
-        (you should find it in the fourth tool menu from the left):
+        (you should find it in the "Construct" tool section, below "points" and above "Lines", 
+        or <mdash /> if you installed GeoGebra locally on your computer <mdash /> in the 
+        fourth tool menu from the left):
 	</p>
 
 	<image width="10%" valign="middle" source="GGlocus.png"/>
@@ -135,6 +148,10 @@
     </definition>  
 
 	<image source="ellipse6.png"/>
+    </subsection>
+
+    <subsection xml:id="subsec-ellipse-geogebra-foci" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Foci of an Ellipse</title>
 
 	<p>
 		Let us finally check whether the name <em>focus</em> is justified for 
@@ -151,5 +168,5 @@
 
 	<image source="ellipse7.png"/>
 
-
+    </subsection>
 </section>

@@ -98,13 +98,18 @@
         </ul>
         Perihelion and aphelion are sometimes incorrectly used for the orbits of objects 
         about bodies other than the Sun. The general terms for orbits around any center 
-        of mass (not just the Sun) are <term>periapsis</term> and <term>apoapsis</term>.
+        of mass (not just the Sun) are <term>periapsis</term> and <term>apoapsis</term>, 
+        respectively.
 	</p>
 
 	<p>
 		Some people <em>wrongly</em> believe that the seasons are due to this varying 
         distance of the Earth to the Sun <mdash/> this is not the case. The seasons 
-        are due to the Earth's axial tilt of <m>23.43696^{\circ}</m>, which is the 
+        are due to the Earth's axial tilt<fn xml:id="fn-Earth-tilt">Earth's tilt
+        is also the reason for the <term>tropics</term> being between 
+        <m>23.43696^{\circ}</m>S and <m>23.43696^{\circ}</m>N, and the 
+        <term>polar circles</term> at <m>66.56304^{\circ}</m>S and 
+        <m>66.56304^{\circ}</m>N, respectively. </fn> of <m>23.43696^{\circ}</m>, which is the 
         angle between the plane that contains the orbit of the Earth around the Sun 
         and the plane through the equator of the Earth. By the <em>conversation of 
         angular momentum</em> this tilt (essentially) stays the same as the Earth 
@@ -242,12 +247,12 @@
         last then a total of <m>178\frac34</m> days, or approximately <m>7\frac34</m> 
         days less than spring and summer combined. Since the perihelion and the aphelion 
         don't fall on the solstices, we actually got one day too much here, but we can 
-        acount for <m>6\frac34</m> days:
+        acount for the <m>6\frac34</m> days as follows:
 	    Since there are more months with <m>31</m> days during the spring-summer months and 
         winter also contains the short February, there are <m>2\frac34</m> less days 
         between September 21st and March 21st than the other way round; and since the 
         equinox falls on September 23rd (and not September 21st), we gain another <m>4</m> 
-        days for the spring-summer part of the year. 
+        days for the difference between the spring-summer part vs. the autumn-winter part of the year. 
 	    So the small eccentricity of the Earth's orbit already makes a difference of 
         around a week when we maesure the time between subsequent equinoxes!
 	</p>
@@ -266,18 +271,20 @@
         <url href="https://en.wikipedia.org/wiki/Halley%27s_Comet">Halley's Comet</url> 
         is a famous comet which orbits the Sun in <m>75.315</m> years (its last perihelion 
         was in 1986, the next one should be in mid-2061 <mdash/> track it 
-        <url href="https://theskylive.com/halley-info">here</url>) and was observed 
+        <url href="https://theskylive.com/halley-info">here</url> and you get a page with 
+        lots of information; if you do nothing else, at least scroll down to the 
+        "Orbit Visualization": Halley's Comet has recently passed its aphelion and is now 
+        <em>slowly</em> but <em>increasingly speeding up</em> towards the Sun again.) and was observed 
         from the Earth since ancient times. The eccentricity of its orbit is <m>0.967</m>. 
         Note that Kepler's third law allows us to immediately calculate the semi-major 
-        axis from the knowledge of Earth's semi-major axis: Its length is 
+        axis of Halley's comet from the knowledge of Earth's semi-major axis: Its length is 
         <m>\sqrt[3]{75.315^2} \approx 17.8</m> times the length of Earth's semi-major axis. 
 	</p>
 
 	<p>
-		Redo some of the above calculations now for Halley's Comet: Start by plotting 
-        a picture of its elliptic orbit. On average, it takes around <m>\frac15</m> 
-        of a year to travel <m>1^{\circ}</m>, but how much variation is there 
-        throughout its journey? Can you interpret the graph you are getting here?
+        If this section made you interested in astronomy, visit the 
+        <a href="https://hbo.bb/hbo/">Harry Bailey Observatory</a> of the 
+        <em>Barbados Astronomical Society</em> on a Friday night.
     </p>
 
 </section>
