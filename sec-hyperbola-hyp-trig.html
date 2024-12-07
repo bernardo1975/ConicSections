@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hyperbolic Trig Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:pf="https://prefigure.org" property="og:type" content="book">
+<meta xmlns:pf="https://prefigure.org" property="book:title" content="Conic Sections">
+<meta xmlns:pf="https://prefigure.org" property="book:author" content="Dr Bernd Sing">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:pf="https://prefigure.org" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:pf="https://prefigure.org" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:pf="https://prefigure.org" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link xmlns:pf="https://prefigure.org" href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link xmlns:pf="https://prefigure.org" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link xmlns:pf="https://prefigure.org" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link xmlns:pf="https://prefigure.org" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#sec-ellipse-astronomy-2-7 { counter-set: sec-ellipse-astronomy-2-7 0; }
+#sec-ellipse-astronomy-2-7 > li::marker { content: ""counter(sec-ellipse-astronomy-2-7,decimal)"."; }
+#sec-ellipse-astronomy-2-7 > li { counter-increment: sec-ellipse-astronomy-2-7; }
+</style>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a xmlns:pf="https://prefigure.org" id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Conic Sections:</span> <span class="subtitle">Using GeoGebra to explore Conic Sections</span></a></h1>
+<p class="byline">Dr Bernd Sing</p>
+</div>
+</div></header><nav xmlns:pf="https://prefigure.org" id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-hyperbola-astronomy.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-hyperbola.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div xmlns:pf="https://prefigure.org" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div xmlns:pf="https://prefigure.org" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-conic-section.html" class="internal"><span class="codenumber">1</span> <span class="title">Conic Section</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-history.html" class="internal"><span class="codenumber">1.1</span> <span class="title">History</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-conic-sections.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Conic Sections</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-geogebra.html" class="internal"><span class="codenumber">1.3</span> <span class="title">GeoGebra</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-parabola.html" class="internal"><span class="codenumber">2</span> <span class="title">Parabola</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-parabola-geogebra.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Parabola in GeoGebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parabola-geogebra.html#subsec-parabola-geogebra-intro" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Drawing a Parabola</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parabola-geogebra.html#subsec-parabola-geogebra-property" class="internal"><span class="codenumber">2.1.2</span> <span class="title">A Defining Property of a Parabola</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parabola-geogebra.html#subsec-parabola-geogebra-uniqueness" class="internal"><span class="codenumber">2.1.3</span> <span class="title">There is only one Parabola (up to similarity)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parabola-geogebra.html#subsec-parabola-geogebra-application" class="internal"><span class="codenumber">2.1.4</span> <span class="title">A Property with many Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parabola-geogebra.html#subsec-parabola-geogebra-evolute" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Osculating Circles &amp; Evolute</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-parabola-sports.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Parabola in Sports</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-ellipse.html" class="internal"><span class="codenumber">3</span> <span class="title">Ellipse</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ellipse-geogebra.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Ellipse in GeoGebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ellipse-geogebra.html#subsec-ellipse-geogebra-intro" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Drawing an Ellipse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ellipse-geogebra.html#subsec-ellipse-geogebra-parts" class="internal"><span class="codenumber">3.1.2</span> <span class="title">The Parts of an Ellipse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ellipse-geogebra.html#subsec-ellipse-geogebra-equidistant" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Ellipse as an Equidistant Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ellipse-geogebra.html#subsec-ellipse-geogebra-foci" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Foci of an Ellipse</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ellipse-astronomy.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Ellipse in Astronomy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-hyperbola.html" class="internal"><span class="codenumber">4</span> <span class="title">Hyperbola</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hyperbola-geogebra.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Hyperbola in GeoGebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyperbola-geogebra.html#subsec-hyperbola-geogebra-intro" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Drawing and Parts of a Hyperbola</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyperbola-geogebra.html#subsec-hyperbola-geogebra-definition" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Definition of a Hyperbola</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyperbola-geogebra.html#subsec-hyperbola-geogebra-parallel" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Parallel Curves to the Hyperbola</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyperbola-geogebra.html#subsec-hyperbola-geogebra-evolute" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Evolute of a Hyperbola</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hyperbola-astronomy.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Interstellar Visitor</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-hyperbola-hyp-trig.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Hyperbolic Trig Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:pf="https://prefigure.org" class="section" id="sec-hyperbola-hyp-trig"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Hyperbolic Trig Functions</span>
+</h2>
+<div class="para" id="sec-hyperbola-hyp-trig-2">We are all familiar with the trigonometric functions cosine, sine and tangent (to name the most prominent ones). There are also sometimes called <em class="emphasis">circular functions</em> because they can be defined on the unit circle. Besides these there is another "family" of functions called the <dfn class="terminology">hyperbolic trigonometric functions</dfn>. In this section, we will explore these and contrast their properties to the usual trigonometric functions (we will call them <em class="emphasis">circular</em> trigonometric functions in the following to distinguish them from the <em class="emphasis">hyperbolic</em> trigonometric functions).</div>
+<div class="para logical" id="sec-hyperbola-hyp-trig-3">
+<div class="para">Let us start by looking at the graphs of the circular trigonometric functions. <div id="sec-hyperbola-hyp-trig-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">   cosgraph = plot(cos(x),(x,-2.2*pi,2.2*pi),color="purple",thickness=2,aspect_ratio=1,legend_label="cos")
+singraph = plot(sin(x),(x,-2.2*pi,2*pi),color="darkgreen",thickness=2, linestyle=":",legend_label="sin")
+tangraph = plot(tan(x),(x,-2.2*pi,2.2*pi),color="red",thickness=2, linestyle="-.",detect_poles=True,ymax=3,ymin=-3,aspect_ratio=1,legend_label="tan")
+cosgraph+singraph+tangraph
+</script></div> The <em class="emphasis">hyperbolic trigonometric functions</em> we would like to consider here are</div>
+<ul class="disc" id="sec-hyperbola-hyp-trig-3-3">
+<li id="sec-hyperbola-hyp-trig-3-3-1"><div class="para" id="p-derived-sec-hyperbola-hyp-trig-3-3-1">the <dfn class="terminology">hyperbolic cosine</dfn> denoted cosh(x),</div></li>
+<li id="sec-hyperbola-hyp-trig-3-3-2"><div class="para" id="p-derived-sec-hyperbola-hyp-trig-3-3-2">the <dfn class="terminology">hyperbolic sine</dfn> denoted sinh(x), and</div></li>
+<li id="sec-hyperbola-hyp-trig-3-3-3"><div class="para" id="p-derived-sec-hyperbola-hyp-trig-3-3-3">the <dfn class="terminology">hyperbolic tangent</dfn> denoted tanh(x).</div></li>
+</ul>
+<div class="para">Let us plot them in <em class="emphasis">SageMath</em>. <div id="sec-hyperbola-hyp-trig-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">coshgraph = plot(cosh(x),(x,-4,4),color="purple",thickness=2,aspect_ratio=1,legend_label="cosh")
+sinhgraph = plot(sinh(x),(x,-4,4),color="darkgreen",thickness=2, linestyle=":",legend_label="sinh")
+tanhgraph = plot(tanh(x),(x,-4,4),color="red",thickness=2, linestyle="-.",detect_poles=True,ymax=3,ymin=-3,aspect_ratio=1,legend_label="tanh")
+coshgraph+sinhgraph+tanhgraph
+</script></div>
+</div>
+</div>
+<div class="para" id="sec-hyperbola-hyp-trig-4">You should see that they look quite differently from the circular trigonometric functions. In particular, the hyperbolic tangent seems to have horizontal asymptotes as <span class="process-math">\(x\to\pm\infty\text{.}\)</span> We can check that this is indeed the case by calculating <span class="process-math">\(\lim\limits_{x\to\infty} \tanh(x)\text{.}\)</span> In <em class="emphasis">SageMath</em> we can calculate this limit as follows: <div id="sec-hyperbola-hyp-trig-4-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">limit(tanh(x), x=+oo)
+</script></div> Again, you should now calculate <span class="process-math">\(\lim\limits_{x\to-\infty} \tanh(x)\)</span> in SageMath. Also calculate <span class="process-math">\(\lim\limits_{x\to+\infty} \cosh(x)\text{,}\)</span> <span class="process-math">\(\lim\limits_{x\to-\infty} \cosh(x)\text{,}\)</span> <span class="process-math">\(\lim\limits_{x\to+\infty} \sinh(x)\)</span> and <span class="process-math">\(\lim\limits_{x\to-\infty} \sinh(x)\)</span> (do you get what you expect? Simply replace the <span class="process-math">\(\tanh\)</span> with the other functions, and the +oo with -oo). What do you get if you replace the hyperbolic trigonometric functions with the circular trigonometric functions cosine, sine and tangent? Does this make sense?</div>
+<div class="para" id="sec-hyperbola-hyp-trig-5">In calculus, you calculate derivatives of the circular trigonometric functions, e.g.<details class="ptx-footnote" aria-live="polite" id="tangent-derivative"><summary class="ptx-footnote__number" title="Footnote 4.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="tangent-derivative">Hopefully <em class="emphasis">SageMath</em> gives you the expression <span class="process-math">\(\tan^2(x)+1\)</span> here and not the far more useless expression involving the secant function that people seem to love memorizing!</div></details>, <div id="sec-hyperbola-hyp-trig-5-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">diff(tan(x),x)
+</script></div> Let us use <em class="emphasis">SageMath</em> to calculate the derivatives of the hyperbolic trigonometric functions. Can you make a table comparing the circular trigonometric functions and their derivatives with the hyperbolic trigonometric functions and their derivatives? <div id="sec-hyperbola-hyp-trig-5-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">diff(tanh(x),x)
+</script></div> From this table — and the <em class="emphasis">Fundamental Theorem of Calculus</em> — it is immediate what the integrals/anti-derivatives of the (hyperbolic or not) sine and cosine are (namely?). For the tangent, we get <div id="sec-hyperbola-hyp-trig-5-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(tan(x),x).full_simplify()
+</script></div> as anit-derivative — note that this expression is missing a <em class="emphasis">constant of integration</em> that you should always include in your work, and that <span class="process-math">\(\log\)</span> here denotes the <em class="emphasis">natural logarithm</em> that you usually might write as <span class="process-math">\(\ln\text{.}\)</span> We have included a full_simplify() in the above command to force <em class="emphasis">SageMath</em> to <em class="emphasis">not(!)</em> use the secant. What is an anti-derivative of the hyperbolic tangent? <div id="sec-hyperbola-hyp-trig-5-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(tanh(x),x).full_simplify()
+</script></div>
+</div>
+<div class="para" id="sec-hyperbola-hyp-trig-6">Let us now turn our attention to definitions: For the tangent we have <span class="process-math">\(\tan(x)=\frac{\sin(x)}{\cos(x)}\text{.}\)</span> For the hyperbolic tangent we similarly have <span class="process-math">\(\tanh(x)=\frac{\sinh(x)}{\cosh(x)}\text{,}\)</span> which we can confirm in the following plot: <div id="sec-hyperbola-hyp-trig-6-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">plot(sinh(x)/cosh(x),(x,-3,3),thickness=5,color="orange")+plot(tanh(x),(x,-3,3),thickness=3,color="blue",linestyle=":")
+</script></div> This leaves us with the definitions of the hyperbolic cosine and sine.</div>
+<div class="para logical" id="sec-hyperbola-hyp-trig-7">
+<div class="para">Let us begin by looking at the following parametric plot: <div id="sec-hyperbola-hyp-trig-7-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"> t = var('t')
+parametric_plot((cos(t),sin(t)),(t,0,2*pi),aspect_ratio=1)
+</script></div> This shows us that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t \mapsto \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para">is a <em class="emphasis">parametrization</em> of the <em class="emphasis">unit circle</em> <span class="process-math">\(x^2+y^2=1\text{.}\)</span> Thus the coordinates of any point on the circle can be expressed as <span class="process-math">\((\cos(t),\sin(t))\)</span> for some value of <span class="process-math">\(t\in[0,2\cdot\pi)\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-hyperbola-hyp-trig-8">In the introduction to this project, we mentioned that <span class="process-math">\(\alpha x^2-\beta y^2=1\)</span> for some positive parameters <span class="process-math">\(\alpha, \beta\gt 0\)</span> describe hyperbolas. Let us consider the function <span class="process-math">\(f(x,y) = x^2 - y^2\)</span> now, and make a contour_plot of this function (you might want to consult the "SageMath Lecture 2: Plotting in SageMath" again for this). Add an implicit_plot to this contour plot that highlights the level set with equation <span class="process-math">\(x^2-y^2=1\text{;}\)</span> this is the <em class="emphasis">unit hyperbola</em>. Finally, make a parametric plot similar to the one above, but with cosine and sine replaced by their hyperbolic counterparts (and choose the values for <span class="process-math">\(t\)</span> carefully).</div>
+<div id="sec-hyperbola-hyp-trig-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">t, x, y = var('t, x, y')
+f(x,y) = x^2-y^2
+p1 = contour_plot(f(x,y), (x,-3,3),(y,-3,3),cmap="tab20c", fill=False)
+p2 = implicit_plot(f(x,y)==1,(x,-3,3), (y,-3.2,3.2), color="grey", linewidth=6,linestyle=":")
+p3 = parametric_plot((cosh(t),sinh(t)),(t,-1.8,1.8), xmax=3, color="black", thickness=3, linestyle="-")
+p1 + p2 + p3
+</script></div>
+<div class="para logical" id="sec-hyperbola-hyp-trig-10">
+<div class="para">You should see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t \mapsto \begin{pmatrix} \cosh(t) \\ \sinh(t) \end{pmatrix}, \qquad t\in\mathbb{R} 
+\end{equation*}
+</div>
+<div class="para">is a <em class="emphasis">parametrization</em> of the <em class="emphasis">unit hyperbola</em> (more precisely, only part of it — the left branch). Now there are many parametrizations of both the unit circle as well as the unit hyperbola, so what makes this one special? E.g., here is another parametrization of the unit circle: <div id="sec-hyperbola-hyp-trig-10-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">   t = var('t')
+parametric_plot(((1-t^2)/(1+t^2),2*t/(1+t^2)),(t,-10,10),aspect_ratio=1)
+</script></div> That is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t \mapsto \begin{pmatrix} \frac{1-t^2}{1+t^2} \\ \frac{2t}{1+t^2} \end{pmatrix}, \qquad t\in\mathbb{R} 
+\end{equation*}
+</div>
+<div class="para">also yields the unit circle (this parametrization turns out to be useful when one integrates functions containing trigonometric functions). The property that makes the parametrization</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t \mapsto \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix}, \qquad t\in[0,2\pi) 
+\end{equation*}
+</div>
+<div class="para">useful is that there is an immediate interpretation of the parameter <span class="process-math">\(t\)</span> in this case:</div>
+<ul class="disc" id="sec-hyperbola-hyp-trig-10-9">
+<li id="sec-hyperbola-hyp-trig-10-9-1"><div class="para" id="p-derived-sec-hyperbola-hyp-trig-10-9-1">it is the angle at the origin measured in radians, or, alternatively,</div></li>
+<li id="sec-hyperbola-hyp-trig-10-9-2"><div class="para" id="p-derived-sec-hyperbola-hyp-trig-10-9-2">it is the length of the circular arc on the unit circle from the point <span class="process-math">\((1,0)\)</span> to <span class="process-math">\((\cos(t),\sin(t))\)</span> in counter-clockwise direction.</div></li>
+</ul>
+<div class="para">As a result, the trigonometric functions can all be defined on the unit circle (in fact, in two slightly different ways).</div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/trig_unit1.png" class="contained"></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/trig_unit2.png" class="contained"></div>
+<div class="para" id="sec-hyperbola-hyp-trig-13">Instead of an angle (or arc length), the parameterization for the hyperbolic functions is related to an <em class="emphasis">area</em>. To motivate this, let us have a look at the unit circle again: The circular sector between the <span class="process-math">\(x\)</span>-axis and the segment connecting the origin with the point <span class="process-math">\((\cos(\alpha),\sin(\alpha))\)</span> on the circle has area <span class="process-math">\(\frac12\alpha\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/unitcircle.png" class="contained"></div>
+<div class="para" id="sec-hyperbola-hyp-trig-15">Now let us look at the similar area on the unit hyperbola:</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/unithyperbola.png" class="contained"></div>
+<div class="para" id="sec-hyperbola-hyp-trig-17">What is the area of the shaded region here? This area is bounded by the straight line from the origin to the point <span class="process-math">\((\cosh(x),\sinh(x))\)</span> (for a fixed value of <span class="process-math">\(x\)</span>) on the hyperbola, the <span class="process-math">\(x\)</span>-axis and the unit hyperbola <span class="process-math">\(x^2-y^2=1\)</span> (what do you get if you make <span class="process-math">\(y\)</span> the subject?). We calculate this area in <em class="emphasis">SageMath</em>, and confirm that its value is <span class="process-math">\(\frac12\,x\)</span> (here, by checking that the straight line <span class="process-math">\(y=\frac12x\)</span> for <span class="process-math">\(x\ge 1\)</span> coincides with the value of the integral/value associated with the point <span class="process-math">\((\cosh(x),\sinh(x))\)</span>): <div id="sec-hyperbola-hyp-trig-17-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">t = var("t")
+
+assume(cosh(x)-1>0)
+
+g(x) = integrate(sinh(x)*t/cosh(x), (t,0,1)) + integrate(sinh(x)*t/cosh(x)-sqrt(t^2-1), (t,1,cosh(x)))
+
+plot(g(x),(x,1,5), thickness=2) + plot(x/2,(x,1,5), linestyle=":", color="black",thickness=3)
+</script></div>
+</div>
+<div class="para logical" id="sec-hyperbola-hyp-trig-18">
+<div class="para">In fact, it turns out that the hyperbolic cosine and sine can be expressed using the exponential function as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cosh(x) = \frac{e^x+e^{-x}}{2} \quad\text{and}\quad \sinh(x) = \frac{e^x-e^{-x}}{2} .
+\end{equation*}
+</div>
+<div class="para">You might be familiar with corresponding formulae for the (circular) cosine and sine from <em class="emphasis">Euler’s formula</em> (which one also uses, e.g., in the <em class="emphasis">de Moivre’s formula</em>), namely, <span class="process-math">\(e^{ix} = \cos(x)+i\,\sin(x)\text{.}\)</span> This leads to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos(x) = \frac{e^{ix}+e^{-ix}}{2} \quad\text{and}\quad \sin(x) = \frac{e^{ix}-e^{-ix}}{2i} .
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec-hyperbola-hyp-trig-19">Lastly, we note the following: The (circular) trig functions <span class="process-math">\(\sin\text{,}\)</span> <span class="process-math">\(\cos\)</span> and <span class="process-math">\(\tan\)</span> have an <em class="emphasis">arc</em> length on the unit circle as their argument — thus, the proper<details class="ptx-footnote" aria-live="polite" id="fn-inverse-trig"><summary class="ptx-footnote__number" title="Footnote 4.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="fn-inverse-trig">With "proper" we want to stress that the notation <span class="process-math">\(\sin^{-1}\text{,}\)</span> <span class="process-math">\(\cos^{-1}\)</span> and <span class="process-math">\(\tan^{-1}\text{,}\)</span> respectively, is for many reasons ill-advised.</div></details> names of the inverse trig functions are <span class="process-math">\(\arcsin\text{,}\)</span> <span class="process-math">\(\arccos\)</span> and <span class="process-math">\(\arctan\text{,}\)</span> respectively. Similarly, the hyperbolic trig functions <span class="process-math">\(\sinh\text{,}\)</span> <span class="process-math">\(\cosh\)</span> and <span class="process-math">\(\tanh\)</span> have an <em class="emphasis">area</em> on the unit hyperbola as their argument — thus, the proper names of the inverse hyperbolic trig functions are <span class="process-math">\(\operatorname{arsinh}\text{,}\)</span> <span class="process-math">\(\operatorname{arcosh}\)</span> and <span class="process-math">\(\operatorname{artanh}\text{,}\)</span> respectively, i.e., not an "arc" but only an "ar" (short for "area") as initial syllable.</div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-hyperbola-astronomy.html" title="Previous"><span xmlns:pf="https://prefigure.org" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:pf="https://prefigure.org" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span xmlns:pf="https://prefigure.org" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a xmlns:pf="https://prefigure.org" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:pf="https://prefigure.org" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a xmlns:pf="https://prefigure.org" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
